@@ -13,9 +13,9 @@ class App extends React.Component {
         <div className="App">
           Mirte and Olga and Thels' Dog Quiz
           <Route exact path="/" component={HomePage} />
-          <Route path="/breeds/" component={BreedListPage} />
+          <Route exact path="/breeds/" component={BreedListPage} />
           <Route path="/breed/:breedname" component={BreedPicturesPage} />
-          <Route path="/game/" component={GamePage} />
+          <Route path="/game/:gametype" component={GamePage} />
         </div>
       </BrowserRouter>
     )
