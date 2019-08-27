@@ -1,0 +1,10 @@
+.breed-pictures-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.breed-picture {
+  height: 20rem;
+  padding: 2rem;
+}
