@@ -3,21 +3,18 @@ import { connect } from 'react-redux'
 import './BreedPicturesPage.css'
 
 class BreedPicturesPage extends React.Component {
-  render() {
-    // const currentBreed = this.props.dogList.find(breed => breed.name === this.props.name)
-    if (this.props.dogsList) {
 
+  render() {
+    if (this.props.dogsList) {
+      const currentBreedName = this.props.match.params.breedname
+      const currentBreed = this.props.dogsList.find(breed => breed.breedname === currentBreedName)
       return (
         <div className="breed-pictures-box">
-          { this.props.dogsList[0].pictures.map(dog => {
-            return <img className="breed-picture" key={dog} alt="breed" src={dog} />
-          })}
-          
-          
+          {currentBreed.pictures.map(breed => <img className="breed-picture" key={breed} alt="breed" src={breed} />)}
         </div>
       )
     } else {
-      return <div></div>
+      return <p>Loading...</p>
     }
   }
 }
