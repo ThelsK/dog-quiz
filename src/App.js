@@ -1,21 +1,31 @@
-import React from 'react'
-import { Provider } from "react-redux"
-import { BrowserRouter, Route } from 'react-router-dom'
-import store from './store'
-import './App.css'
+import React from "react"
+import { BrowserRouter, Route } from "react-router-dom"
+import "./App.css"
+import HomePage from "./components/HomePage/"
+import BreedListPage from "./components/BreedListPage/"
+import BreedPicturesPage from "./components/BreedPicturesPage/"
+import GamePage from "./components/GamePage/"
+import { connect } from "react-redux";
+import { fetchBreeds } from './actions/fetchBreeds'
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchBreeds()
+  }
+
   render() {
     return (
       <BrowserRouter>
-        <Provider store={store}>
-          <div className="App">
-            Mirte and Olga and Thels' Dog Quiz
-          </div>
-        </Provider >
+        <div className="App">
+          Mirte and Olga and Thels' Dog Quiz
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/breeds/" component={BreedListPage} />
+          <Route path="/breed/:breedname" component={BreedPicturesPage} />
+          <Route path="/game/:gametype" component={GamePage} />
+        </div>
       </BrowserRouter>
     )
   }
 }
 
-export default App;
+export default connect(null, { fetchBreeds })(App) 

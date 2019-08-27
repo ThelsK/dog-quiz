@@ -1,15 +1,6 @@
-/*
 import { combineReducers } from 'redux'
+import setBreeds from "./setBreeds"
 
 export default combineReducers({
-
+  setBreeds
 })
-*/
-
-
-export default (state = [], action = {}) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
