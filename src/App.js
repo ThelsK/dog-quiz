@@ -17,7 +17,6 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
-          Mirte and Olga and Thels' Dog Quiz
           <Route exact path="/" component={HomePage} />
           <Route exact path="/breeds/" component={BreedListPage} />
           <Route path="/breeds/:breedname" component={BreedPicturesPage} />
