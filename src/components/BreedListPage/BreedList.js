@@ -7,7 +7,7 @@ export default function BreedList(props) {
       <ul>
         {props.breedList.map((breed, id) =>
           <li key={id}>
-            <Link to={`/breed/${breed.breedname}`}>
+            <Link to={`/breeds/${breed.breedname}`} className="App-link">
               {breed.breedname}
             </Link>
           </li>

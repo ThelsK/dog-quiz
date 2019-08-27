@@ -7,18 +7,21 @@ class BreedListContainer extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>List of Dog Breeds</h1>
+        <h1>MOTh's List of Dog Breeds</h1>
         {this.props.breedList
           ? <BreedList breedList={this.props.breedList}></BreedList>
           : "Loading..."
         }
-        <Link to="/">Return Home</Link>
+        <Link to="/" className="App-link">
+          Return Home
+        </Link>
       </div >
     )
   }
 }
 
 const mapStateToProps = state =>
-  ({ breedList: state.breedList })
+  ({ breedList: state.setBreeds.dogslist })
 
 export default connect(mapStateToProps)(BreedListContainer)
+
