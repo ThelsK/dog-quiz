@@ -7,14 +7,8 @@ export const fetchBreeds = () => dispatch =>
     .then(result => {
       const breedData = result.body.message
       const breednames = Object.keys(breedData)
-      const filteredBreednames = breednames.reduce((result, breedname) => {
-        if (!breedData[breedname].length) {
-          return result.concat([breedname])
-        }
-        return result
-      }, [])
 
-      Promise.all(filteredBreednames.map(breedname =>
+      Promise.all(breednames.map(breedname =>
         request('https://dog.ceo/api/breed/' + breedname + '/images')
           .then(response => ({ breedname, pictures: response.body.message }))
       ))
