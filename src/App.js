@@ -5,8 +5,14 @@ import HomePage from "./components/HomePage/"
 import BreedListPage from "./components/BreedListPage/"
 import BreedPicturesPage from "./components/BreedPicturesPage/"
 import GamePage from "./components/GamePage/"
+import { connect } from "react-redux";
+import { fetchBreeds } from './actions/fetchBreeds'
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchBreeds()
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -22,4 +28,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default connect(null, { fetchBreeds })(App) 
