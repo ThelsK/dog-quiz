@@ -20,7 +20,7 @@ class App extends React.Component {
           Mirte and Olga and Thels' Dog Quiz
           <Route exact path="/" component={HomePage} />
           <Route exact path="/breeds/" component={BreedListPage} />
-          <Route path="/breed/:breedname" component={BreedPicturesPage} />
+          <Route path="/breeds/:breedname" component={BreedPicturesPage} />
           <Route path="/game/:gametype" component={GamePage} />
         </div>
       </BrowserRouter>
