@@ -1,0 +1,32 @@
+.answers {
+  display: flex;
+}
+
+.answer {
+  padding: 3rem;
+  border: 3px solid white;
+  margin: 1rem;
+}
+
+.answer:hover {
+  background-color:rgba(255, 255, 255, 0.1);
+}
+
+.question {
+  max-height: 400px;
+}
+
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+
+.wrong:hover {
+  background-color: red
+} 
+.correct:hover {
+  background-color: green;
+}

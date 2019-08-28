@@ -1,7 +1,7 @@
 import React from "react"
 import QAPictureQuestion from "./QAPictureQuestion";
 import QAPictureAnswers from "./QAPictureAnswers";
-
+import "./QA.css"
 
 export default class QAPictureContainer extends React.Component {
 
