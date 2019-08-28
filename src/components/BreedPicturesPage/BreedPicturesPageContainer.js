@@ -1,4 +1,5 @@
 import React from "react"
+import Title from "../Title"
 
 export default class BreedPicturesPageContainer extends React.Component {
 
@@ -17,6 +18,11 @@ export default class BreedPicturesPageContainer extends React.Component {
     return output
   }
 
+  capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  }
+
   renderPictures() {
       const currentBreedName = this.props.breedName
       const currentBreedObject = this.props.breedsList.find(breed => breed.breedname === currentBreedName)
@@ -29,6 +35,9 @@ export default class BreedPicturesPageContainer extends React.Component {
   }
 
   render() {
-    return this.renderPictures()
+    return (<div>
+      <Title title={this.capitalize(this.props.breedName)} />
+      {this.renderPictures()}
+      </div>)
   }
 }
