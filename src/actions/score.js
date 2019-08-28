@@ -1,24 +1,24 @@
-export const SET_SCORE = 'SET_SCORE'
-export const UPDATE_SCORE = 'UPDATE_SCORE'
+export const ADD_CORRECT = 'SET_CORRECT'
+export const ADD_WRONG = 'SET_WRONG'
+export const RESET_SCORE = 'RESET_SCORE'
 
-export const setScore = () => dispatch => {
+export const addCorrect = () => dispatch => {
   const action = {
-    type: SET_SCORE,
-    payload: {
-      totalScore: 0,
-      correctScore: 0
-    }
+    type: ADD_CORRECT
   }
   dispatch(action)
 }
 
-export const updateScore = (totalScore, correctScore) => dispatch => {
+export const addWrong = () => dispatch => {
   const action = {
-    type: UPDATE_SCORE,
-    payload: {
-      totalScore,
-      correctScore
-    }
+    type: ADD_WRONG
+  }
+  dispatch(action)
+}
+
+export const resetScore = () => dispatch => {
+  const action = {
+    type: RESET_SCORE
   }
   dispatch(action)
 }

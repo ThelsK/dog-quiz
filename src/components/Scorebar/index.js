@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setScore, updateScore } from '../../actions/score'
+import { resetScore } from '../../actions/score'
 
 class Scorebar extends React.Component {
 
   componentDidMount() {
-    this.props.setScore()
+    this.props.resetScore()
   }
 
   render() {
@@ -23,4 +23,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { setScore, updateScore })(Scorebar)
+export default connect(mapStateToProps, { resetScore })(Scorebar)
