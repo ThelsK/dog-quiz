@@ -9,7 +9,7 @@ class GamePageWrapper extends React.Component {
       <div>
         {this.props.breedsList.length
           ? <GamePageContainer />
-          : null
+          : "Loading..."
         }
       </div>
     )
