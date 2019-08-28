@@ -3,7 +3,7 @@ export const SET_CURRENT_QUESTION = 'SET_CURRENT_QUESTION'
 export const generateQuestion = (breedsList = [], questionType = "picture", recentQuestions = [], totalAnswers = 3) => dispatch => {
 
   if (!breedsList.length) {
-    console.log("ERROR: generateQuestion expects a list of breeds (each with a breedname and an array of pictures) as its first argument.")
+    console.log("ERROR: generateQuestion() expects a list of breeds (each with a breedname and an array of pictures) as its first argument.")
     return
   }
 
@@ -19,56 +19,52 @@ export const generateQuestion = (breedsList = [], questionType = "picture", rece
     }
   }
 
-  console.log("Generating Questions")
-
-  const correctIndexes = generateCorrectIndexes(breedsList, recentQuestions)
+  const recentPictures = recentQuestions.map(question => question.picture)
+  const correctIndexes = generateCorrectIndexes(breedsList, recentPictures)
   const incorrectIndexes = generateIncorrectIndexes(breedsList, correctIndexes.breedIndex, totalAnswers)
 
+  const question = {}
+  question.type = questionType
+  question.breedname = breedsList[correctIndexes.breedIndex].breedname
+  question.picture = breedsList[correctIndexes.breedIndex].pictures[correctIndexes.pictureIndex]
 
 
+  console.log("incorrectIndexes:", incorrectIndexes)
+  const answers = []
+  if (questionType === "picture") {
+    console.log("Answers A:", answers)
+    answers.push({ breedname: question.breedname, isCorrect: true })
+    console.log("Answers B:", answers)
+    answers.push(...(incorrectIndexes.map(index =>
+      ({ breedname: breedsList[index].breedname, isCorrect: false }))))
+    console.log("Answers C:", answers)
+  } else {
+    answers.push({ picture: question.picture, isCorrect: true })
+    answers.push(...(incorrectIndexes.map(index =>
+      ({ picture: getRandomPicture(breedsList[index]), isCorrect: false }))))
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+  question.answers = shuffleArray(answers)
+  console.log("Question:", question)
   const action = ({
     type: SET_CURRENT_QUESTION,
-    payload: {
-      type: "picture",
-      picture: breedsList[0].pictures[0],
-      answers: [
-        {
-          breedname: breedsList[0].breedname,
-          isCorrect: true,
-        },
-        {
-          breedname: breedsList[1].breedname,
-          isCorrect: false,
-        },
-        {
-          breedname: breedsList[2].breedname,
-          isCorrect: false,
-        },
-      ],
-    },
+    payload: question,
   })
   dispatch(action)
 }
 
-const generateCorrectIndexes = (breedsList) => {
+const generateCorrectIndexes = (breedsList, recentPictures) => {
 
-  const breedIndex = Math.floor(Math.random() * breedsList.length)
-  const picturesList = breedsList[breedIndex].pictures
-  const pictureIndex = Math.floor(Math.random() * picturesList.length)
+  let breedIndex = 0
+  let pictureIndex = 0
+  let picture = ""
+
+  do {
+    breedIndex = Math.floor(Math.random() * breedsList.length)
+    pictureIndex = Math.floor(Math.random() * breedsList[breedIndex].pictures.length)
+    picture = breedsList[breedIndex].pictures[pictureIndex]
+  } while (recentPictures.includes(picture))
 
   return ({
     breedIndex,
@@ -84,6 +80,22 @@ const generateIncorrectIndexes = (breedsList, correctIndex, totalAnswers) => {
       incorrectIndexes.push(randomIndex)
     }
   }
-  console.log("Correct Index:", correctIndex)
-  console.log("Incorrect Indexes:", incorrectIndexes)
+  return incorrectIndexes
+}
+
+const getRandomPicture = breed => {
+  const pictureIndex = Math.floor(Math.random() * breed.pictures.length)
+  return breed.pictures[pictureIndex]
+}
+
+const shuffleArray = inputArray => {
+  inputArray = [...inputArray]
+  const outputArray = []
+  while (inputArray.length) {
+    const index = Math.floor(Math.random() * inputArray.length)
+    outputArray.push(inputArray[index])
+    inputArray[index] = inputArray[inputArray.length - 1]
+    inputArray.pop()
+  }
+  return outputArray
 }
