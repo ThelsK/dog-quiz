@@ -8,9 +8,7 @@ export default class BreedPicturesPageContainer extends React.Component {
     let indexes = []
     while (indexes.length < 10) {
       const randNum = Math.floor(Math.random() * Math.floor(array.length))
-      if (indexes.indexOf(randNum) === -1) {
-        indexes.push(randNum);
-      }
+      if (indexes.indexOf(randNum) === -1) indexes.push(randNum)
     }
     const output = indexes.reduce((output, index) => {
       output.push(array[index])
