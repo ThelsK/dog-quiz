@@ -1,28 +1,31 @@
 import React from "react"
 import { connect } from "react-redux"
 import { generateQuestion } from "../../actions/generateQuestion.js"
+import QAPictureContainer from '../QAPicture/QAPictureContainer'
 
 class GamePageContainer extends React.Component {
 
   componentDidMount() {
-    console.log("The Game Page Container did mount.")
-    console.log("PROPS:", this.props)
     this.props.generateQuestion(this.props.breedsList)
-    console.log("The Game Page Container is done mounting.")
   }
 
   render() {
-    console.log("We are rendering the Game Page Container.")
     return (
       <div>
-        GamePage
+        <h1>
+          GamePage
+        </h1>
+        <QAPictureContainer currentQuestion={this.props.currentQuestion} />
       </div>
     )
   }
 }
 
 const mapStateToProps = state =>
-  ({ breedsList: state.breedsList })
+  ({
+    breedsList: state.breedsList,
+    currentQuestion: state.currentQuestion
+  })
 
 const mapDispatchToProps = { generateQuestion }
 
