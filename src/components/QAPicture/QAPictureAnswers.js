@@ -9,26 +9,29 @@ export default class QAPictureAnswers extends React.Component {
     this.setState({
       answered: true
     })
-    if (this.props.answers[event.target.id].isCorrect) {
-
-      console.log("correct!")
-    } else {
-      console.log("false")
-    }
+    // if (this.props.answers[event.target.id].isCorrect) {
+    //   console.log("correct!")
+    // } else {
+    //   console.log("false")
+    // }
   }
 
   render() {
-    return (<div>
-      <h2>answers:</h2>
-      <div className="answers">
-        {this.props.answers.map((answer, id) => <div
-          className={"answer " + (!this.state.answered ? null : (answer.isCorrect ? "correct" : "wrong"))}
-          key={id} id={id}
-          onClick={this.checkCorrect}>
-          {answer.breedname}<
-              /div>)}
+    return (
+      <div>
+        <h2>answers:</h2>
+        <div className="answers">
+          {this.props.answers.map((answer, id) =>
+            <div
+              className={"answer " + (!this.state.answered ? null : (answer.isCorrect ? "correct" : "wrong"))}
+              key={id} id={id}
+              onClick={this.checkCorrect}
+            >
+              {answer.breedname}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-        )
-      }
+    )
+  }
 }
