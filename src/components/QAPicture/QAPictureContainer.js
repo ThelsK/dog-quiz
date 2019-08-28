@@ -4,11 +4,15 @@ import QAPictureAnswers from "./QAPictureAnswers";
 
 
 export default class QAPictureContainer extends React.Component {
+
   render() {
     return <div>
-      <QAPictureQuestion question={this.props.currentQuestion.picture} />
-      <QAPictureAnswers answers={this.props.currentQuestion.answers} />
+      {this.props.currentQuestion.type
+        ? <div><QAPictureQuestion question={this.props.currentQuestion.picture} />
+          <QAPictureAnswers answers={this.props.currentQuestion.answers} /></div>
+        : "Loading quiz.."}
     </div>
   }
 }
+
 

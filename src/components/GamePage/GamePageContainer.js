@@ -13,7 +13,7 @@ class GamePageContainer extends React.Component {
     return (
       <div>
         <h1>
-          GamePage
+          Game Page
         </h1>
         <QAPictureContainer currentQuestion={this.props.currentQuestion} />
       </div>
