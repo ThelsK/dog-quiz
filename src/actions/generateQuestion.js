@@ -39,7 +39,6 @@ export const generateQuestion = (breedsList = [], questionType = "picture", rece
       ({ picture: getRandomPicture(breedsList[index]), isCorrect: false }))))
   }
 
-
   question.answers = shuffleArray(answers)
   const action = ({
     type: SET_CURRENT_QUESTION,
