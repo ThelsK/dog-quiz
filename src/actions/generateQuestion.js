@@ -28,16 +28,11 @@ export const generateQuestion = (breedsList = [], questionType = "picture", rece
   question.breedname = breedsList[correctIndexes.breedIndex].breedname
   question.picture = breedsList[correctIndexes.breedIndex].pictures[correctIndexes.pictureIndex]
 
-
-  console.log("incorrectIndexes:", incorrectIndexes)
   const answers = []
   if (questionType === "picture") {
-    console.log("Answers A:", answers)
     answers.push({ breedname: question.breedname, isCorrect: true })
-    console.log("Answers B:", answers)
     answers.push(...(incorrectIndexes.map(index =>
       ({ breedname: breedsList[index].breedname, isCorrect: false }))))
-    console.log("Answers C:", answers)
   } else {
     answers.push({ picture: question.picture, isCorrect: true })
     answers.push(...(incorrectIndexes.map(index =>
@@ -46,7 +41,6 @@ export const generateQuestion = (breedsList = [], questionType = "picture", rece
 
 
   question.answers = shuffleArray(answers)
-  console.log("Question:", question)
   const action = ({
     type: SET_CURRENT_QUESTION,
     payload: question,
