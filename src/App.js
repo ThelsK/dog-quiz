@@ -4,7 +4,7 @@ import "./App.css"
 import HomePage from "./components/HomePage/"
 import BreedListPage from "./components/BreedListPage/"
 import BreedPicturesPage from "./components/BreedPicturesPage/"
-import GamePage from "./components/GamePage/"
+import GamePageWrapper from "./components/GamePage/"
 import { connect } from "react-redux";
 import { fetchBreeds } from './actions/fetchBreeds'
 
@@ -20,7 +20,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/breeds/" component={BreedListPage} />
           <Route path="/breeds/:breedname" component={BreedPicturesPage} />
-          <Route path="/game/:gametype" component={GamePage} />
+          <Route path="/game/:gametype" component={GamePageWrapper} />
         </div>
       </BrowserRouter>
     )

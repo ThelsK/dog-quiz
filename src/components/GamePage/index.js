@@ -1,14 +1,22 @@
-
 import React from "react"
+import { connect } from "react-redux"
+import GamePageContainer from "./GamePageContainer"
 
-class GamePage extends React.Component {
+class GamePageWrapper extends React.Component {
+
   render() {
     return (
       <div>
-        GamePage
+        {this.props.breedsList.length
+          ? <GamePageContainer />
+          : null
+        }
       </div>
     )
   }
 }
 
-export default GamePage
+const mapStateToProps = state =>
+  ({ breedsList: state.breedsList })
+
+export default connect(mapStateToProps)(GamePageWrapper)
