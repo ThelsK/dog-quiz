@@ -10,7 +10,10 @@ export const fetchBreeds = () => dispatch =>
 
       Promise.all(breednames.map(breedname =>
         request('https://dog.ceo/api/breed/' + breedname + '/images')
-          .then(response => ({ breedname, pictures: response.body.message }))
+          .then(response => ({
+            breedname: `${breedname.slice(0, 1).toUpperCase()}${breedname.slice(1)}`,
+            pictures: response.body.message
+          }))
       ))
         .then(dogsList => {
           const action = ({ type: SET_BREEDS, payload: dogsList })
