@@ -1,13 +1,27 @@
 import React from "react"
+import { Link } from "react-router-dom"
+import { connect } from "react-redux"
+import BreedList from "./BreedList.js"
+import Title from "../Title"
 
-class BreedListPage extends React.Component {
+class BreedListContainer extends React.Component {
   render() {
     return (
-      <div>
-        BreedListPage
-      </div>
+      <div className="App">
+        <Title title="MOTh's List of Dog Breeds" />
+        {this.props.breedsList
+          ? <BreedList breedsList={this.props.breedsList}></BreedList>
+          : "Loading..."
+        }
+        <Link to="/" className="App-link">
+          Return Home
+        </Link>
+      </div >
     )
   }
 }
 
-export default BreedListPage
+const mapStateToProps = state =>
+  ({ breedsList: state.breedsList })
+
+export default connect(mapStateToProps)(BreedListContainer)

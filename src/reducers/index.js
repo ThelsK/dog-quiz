@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import setBreeds from "./setBreeds"
+import breedsList from "./breedsList"
+import currentQuestion from "./currentQuestion"
 
 export default combineReducers({
-  setBreeds
+  breedsList,
+  currentQuestion,
 })
