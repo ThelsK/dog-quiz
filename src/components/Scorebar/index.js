@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { resetScore } from '../../actions/score'
+import './Scorebar.css'
 
 class Scorebar extends React.Component {
 
@@ -11,8 +12,11 @@ class Scorebar extends React.Component {
   render() {
     const totalScore = this.props.score.totalScore
     const correctScore = this.props.score.correctScore
+    const correctScorePercent = (correctScore * 100) / totalScore || 0
+    const wrongScorePercent = totalScore - correctScore
     return (<div className="scorebar">
-      <p>Your score: {correctScore}/{totalScore}</p>
+      <p>Total Score: {correctScore}/{totalScore}</p><br />
+      <p className="scorebar-correct">{correctScorePercent}%</p>/<p className="scorebar-wrong">{wrongScorePercent}%</p>
     </div>)
   }
 }

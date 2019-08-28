@@ -1,0 +1,11 @@
+.scorebar p {
+  display: inline-block;
+}
+
+.scorebar-correct {
+  color: greenyellow
+}
+
+.scorebar-wrong {
+  color: red
+}
