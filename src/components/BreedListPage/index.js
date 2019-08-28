@@ -8,8 +8,8 @@ class BreedListContainer extends React.Component {
     return (
       <div className="App">
         <h1>MOTh's List of Dog Breeds</h1>
-        {this.props.breedList
-          ? <BreedList breedList={this.props.breedList}></BreedList>
+        {this.props.breedsList
+          ? <BreedList breedsList={this.props.breedsList}></BreedList>
           : "Loading..."
         }
         <Link to="/" className="App-link">
@@ -21,7 +21,7 @@ class BreedListContainer extends React.Component {
 }
 
 const mapStateToProps = state =>
-  ({ breedList: state.setBreeds.dogslist })
+  ({ breedsList: state.breedsList })
 
 export default connect(mapStateToProps)(BreedListContainer)
 
