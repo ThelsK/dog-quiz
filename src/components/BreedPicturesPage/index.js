@@ -7,7 +7,7 @@ class BreedPicturesPage extends React.Component {
 
   render() {
     if (this.props.breedsList && this.props.breedsList.length) {
-      return <BreedPicturesPageContainer breedsList={this.props.breedsList} breedName={this.props.match.params.breedname}/>
+      return <BreedPicturesPageContainer breedsList={this.props.breedsList} breedName={this.props.match.params.breedname} />
     }
     return <div>Loading...</div>
   }
