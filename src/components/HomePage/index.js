@@ -32,7 +32,7 @@ class HomePage extends React.Component {
 
           <div className="home-page-link">
             <Link to="/game/mixed" className="App-link link-heading">
-              A mixture of both the other two games
+              A mixture of both games
         </Link>
             <p className="link-description">Play a game where both of the above are mixed and matched. Sometimes you have to guess the name with the picture, and sometimes you have to guess the picture with the name.</p>
           </div>

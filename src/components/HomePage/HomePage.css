@@ -12,7 +12,7 @@
 }
 
 .home-page-link {
-  background-color: burlywood;
+  background-color: #bccbde;
   margin: 10px 5px 10px 5px;
   padding: 2rem;
   height: 230px;
@@ -20,12 +20,15 @@
 }
 
 .link-heading {
-  font-size: calc(15px + 2vmin);
-  font-weight: solid
+  font: calc(17px + 2vmin) bold;
 }
 
 .link-description {
-  font-size: calc(4px + 2vmin);
-  /* text-justify: jus */
+  margin: 20px;
+  padding: 13px 5px 5px 5px;
+  border-top: 1px solid #431c5d;
+  font-size: calc(5px + 2vmin);
+  text-align: justify;
+  line-height: 2rem;
 }
 
