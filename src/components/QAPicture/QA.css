@@ -29,7 +29,9 @@
 }
 
 .answerWaiting:hover {
-  background-color: yellow;
+  /* background-color: yellow; */
+  background-color: #ffff66;
+
   color: #431c5d;
 }
 
