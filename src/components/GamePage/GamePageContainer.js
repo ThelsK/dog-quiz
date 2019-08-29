@@ -40,7 +40,11 @@ class GamePageContainer extends React.Component {
 
   startNextQuestion = () => {
     this.setState({ answerStates: [] })
-    this.props.generateQuestion(this.props.activeBreeds)
+    if (!this.props.streak || this.props.streak % 5) {
+      this.props.generateQuestion(this.props.activeBreeds)
+    } else {
+      this.props.addBreedsToActive(this.props.activeBreeds, this.props.breedsList)
+    }
   }
 
   setAnswerStates = (answers, answerClicked) =>
@@ -83,6 +87,7 @@ const mapStateToProps = state =>
     currentQuestion: state.currentQuestion,
     activeBreeds: state.activeBreeds,
     newBreeds: state.newBreeds,
+    streak: state.streak,
   })
 
 const mapDispatchToProps = {
