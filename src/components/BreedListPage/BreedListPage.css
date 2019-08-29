@@ -1,5 +1,10 @@
+.breed-list-page {
+  height: 100vh;
+}
+
 ul {
-  margin-top: 20px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   -webkit-column-count: 5;
      -moz-column-count: 5;
           column-count: 5;

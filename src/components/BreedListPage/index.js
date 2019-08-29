@@ -7,7 +7,7 @@ import Title from "../Title"
 class BreedListContainer extends React.Component {
   render() {
     return (
-      <div className="App">
+      <div className="breed-list-page">
         <Title title="MOTh's List of Dog Breeds" />
         {this.props.breedsList
           ? <BreedList breedsList={this.props.breedsList}></BreedList>

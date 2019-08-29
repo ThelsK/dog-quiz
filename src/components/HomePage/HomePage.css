@@ -1,9 +1,10 @@
 .home-page {
-  height: 50rem;
-  width: 90rem;
+  height: 100vh;
 }
 
 .home-page-links-box {
+  height: 50rem;
+  width: 90rem;
   margin: 3rem;
   display: flex;
   flex-flow: row wrap;
