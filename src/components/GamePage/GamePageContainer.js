@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { generateQuestion } from "../../actions/generateQuestion.js"
 import QAPictureContainer from '../QAPicture/QAPictureContainer'
+import Scorebar from "../Scorebar"
 
 class GamePageContainer extends React.Component {
 
@@ -15,6 +16,7 @@ class GamePageContainer extends React.Component {
         <h1>
           Game Page
         </h1>
+        <Scorebar />
         <QAPictureContainer currentQuestion={this.props.currentQuestion} />
       </div>
     )
