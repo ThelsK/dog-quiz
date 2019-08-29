@@ -1,7 +1,9 @@
 .scorebar {
   background-color: bisque;
   display: flex;
-  justify-content: space-evenly
+  justify-content: space-evenly;
+
+  max-width: 700px;
 }
 
 .scorebar p {

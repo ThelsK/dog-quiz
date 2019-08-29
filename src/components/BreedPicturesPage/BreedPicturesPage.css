@@ -7,7 +7,8 @@
 }
 
 .breed-picture {
-  height: 20rem;
+  /* max-width: 600px; */
+  max-height: 20rem;
   padding: 2rem;
   padding: 0;
   margin: 2rem
@@ -18,4 +19,10 @@
   width: 100%;
   flex-direction: column;
   display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .breed-picture {
+    width: 100%;
+  }
 }

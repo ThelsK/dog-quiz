@@ -13,7 +13,7 @@ class HomePage extends React.Component {
             <Link to="/breeds/" className="App-link link-heading">
               List of dog breeds
         </Link>
-            <p className="link-description">Check the list of the breeds and their pictures</p>
+            <p className="link-description">Go to the list of the breeds and check out their cute pictures</p>
           </div>
 
           <div className="home-page-link">

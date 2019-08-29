@@ -14,6 +14,9 @@ export default function BreedList(props) {
           </li>
         )}
       </ul>
+      <Link to="/" className="App-link return-home">
+          Return Home
+        </Link>
     </div>
   )
 }

@@ -1,10 +1,10 @@
 .home-page {
-  height: 100vh;
+  max-height: 100%;
 }
 
 .home-page-links-box {
-  height: 50rem;
-  width: 90rem;
+  max-height: 100rem;
+  max-width: 90rem;
   margin: 3rem;
   display: flex;
   flex-flow: row wrap;
@@ -16,8 +16,12 @@
   background-color: #bccbde;
   margin: 10px 5px 10px 5px;
   padding: 2rem;
-  height: 230px;
-  width: 450px;
+  max-height: 100rem;
+  max-width: 450px;
+}
+
+.home-page-link:after {
+  padding-bottom: 100%;
 }
 
 .link-heading {
@@ -30,6 +34,6 @@
   border-top: 1px solid #431c5d;
   font-size: calc(5px + 2vmin);
   text-align: justify;
-  line-height: 2rem;
+  line-height: 1.6rem;
 }
 

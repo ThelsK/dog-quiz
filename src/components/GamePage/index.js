@@ -17,6 +17,8 @@ class GamePageWrapper extends React.Component {
         <Link to="/" className="App-link return-home">
           Return Home
         </Link>
+        <br></br>
+        <br></br>
       </div>
     )
   }
