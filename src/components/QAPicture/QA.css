@@ -35,19 +35,23 @@
 
 .answerChooseCorrect,
 .answerChooseCorrect:hover {
-  background-color: green;
+  background-color: #00b359;
+  border: 3px solid #00b359;
 }
 
 .answerChooseWrong,
 .answerChooseWrong:hover {
-  background-color: red;
+  background-color: #cc0033;
+  border: 3px solid #cc0033;
 }
 
 .wrong:hover {
-  background-color: red
+  background-color: #cc0033;
+  border: 3px solid #cc0033;
 } 
 .correct:hover {
-  background-color: green;
+  background-color: #00b359;
+  border: 3px solid #00b359;
 }
 
 img {
@@ -57,10 +61,12 @@ img {
 }
 .answerShowCorrect,
 .answerShowCorrect:hover {
-  background-color: blue;
+  background-color: #00b359;
+  border: 3px solid #00b359;
 }
 
 .answerShowWrong,
 .answerShowWrong:hover {
   background-color: gray;
+  border: 3px solid gray;
 }

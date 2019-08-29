@@ -1,11 +1,19 @@
+.scorebar {
+  background-color: bisque;
+  display: flex;
+  justify-content: space-evenly
+}
+
 .scorebar p {
   display: inline-block;
+  margin-left: 1rem
 }
 
-.scorebar-correct {
-  color: greenyellow
+.scorebar-left {
+  display: flex;
+  justify-content: space-evenly
 }
 
-.scorebar-wrong {
-  color: red
+.scorebar-percent {
+  color: green;
 }
