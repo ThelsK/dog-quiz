@@ -8,7 +8,7 @@
 
 .answer {
   padding: 3rem;
-  border: 3px solid white;
+  border: 3px solid #431c5d;
   margin: 1rem;
 }
 
@@ -30,6 +30,18 @@
   background-color: red;
 }
 
+.wrong:hover {
+  background-color: red
+} 
+.correct:hover {
+  background-color: green;
+}
+
+img {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
 .answerShowCorrect,
 .answerShowCorrect:hover {
   background-color: blue;
