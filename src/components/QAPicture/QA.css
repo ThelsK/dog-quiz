@@ -1,32 +1,72 @@
-.answers {
-  display: flex;
-}
-
-.answer {
-  padding: 3rem;
-  border: 3px solid white;
-  margin: 1rem;
-}
-
-.answer:hover {
-  background-color:rgba(255, 255, 255, 0.1);
-}
-
 .question {
   max-height: 400px;
 }
 
-.correct {
-  background-color: green;
+.answers {
+  display: flex;
 }
 
-.wrong {
-  background-color: red;
+.a-box {
+  margin-bottom: 2rem; 
+}
+
+.a-box h2 {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.answer {
+  padding: 1rem 3rem 1rem 3rem;
+  border: 3px solid #431c5d;
+  margin: 1rem;
+  font-weight: bold;
+  color: #e6e9f0;
+}
+
+.answerWaiting {
+  background-color: #431c5d;
+}
+
+.answerWaiting:hover {
+  background-color: yellow;
+  color: #431c5d;
+}
+
+.answerChooseCorrect,
+.answerChooseCorrect:hover {
+  background-color: #00b359;
+  border: 3px solid #00b359;
+}
+
+.answerChooseWrong,
+.answerChooseWrong:hover {
+  background-color: #cc0033;
+  border: 3px solid #cc0033;
 }
 
 .wrong:hover {
-  background-color: red
+  background-color: #cc0033;
+  border: 3px solid #cc0033;
 } 
 .correct:hover {
-  background-color: green;
+  background-color: #00b359;
+  border: 3px solid #00b359;
+}
+
+img {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+.answerShowCorrect,
+.answerShowCorrect:hover {
+  background-color: #00b359;
+  border: 3px solid #00b359;
+}
+
+.answerShowWrong,
+.answerShowWrong:hover {
+  background-color: gray;
+  border: 3px solid gray;
 }

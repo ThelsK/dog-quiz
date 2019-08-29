@@ -1,0 +1,35 @@
+.home-page {
+  height: 100vh;
+}
+
+.home-page-links-box {
+  height: 50rem;
+  width: 90rem;
+  margin: 3rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: stretch;
+  justify-content: space-evenly
+}
+
+.home-page-link {
+  background-color: #bccbde;
+  margin: 10px 5px 10px 5px;
+  padding: 2rem;
+  height: 230px;
+  width: 450px;
+}
+
+.link-heading {
+  font: calc(17px + 2vmin) bold;
+}
+
+.link-description {
+  margin: 20px;
+  padding: 13px 5px 5px 5px;
+  border-top: 1px solid #431c5d;
+  font-size: calc(5px + 2vmin);
+  text-align: justify;
+  line-height: 2rem;
+}
+

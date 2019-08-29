@@ -1,0 +1,13 @@
+.hints {
+  display: flex;
+  align-items: flex-end;
+}
+
+.hint {
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+.hintpicture {
+  max-width: 30vw;
+}

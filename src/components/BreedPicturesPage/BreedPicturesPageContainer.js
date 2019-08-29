@@ -35,7 +35,7 @@ export default class BreedPicturesPageContainer extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (<div className="breed-pictures-page">
       <Title title={this.capitalize(this.props.breedName)} />
       {this.renderPictures()}
       </div>)

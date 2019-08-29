@@ -12,18 +12,25 @@ class Scorebar extends React.Component {
   render() {
     const totalScore = this.props.score.totalScore
     const correctScore = this.props.score.correctScore
-    const correctScorePercent = (correctScore * 100) / totalScore || 0
-    const wrongScorePercent = totalScore - correctScore
+    const correctScorePercent = Math.round((correctScore * 100) / totalScore) || 0
+    const streak = this.props.streak
     return (<div className="scorebar">
-      <p>Total Score: {correctScore}/{totalScore}</p><br />
-      <p className="scorebar-correct">{correctScorePercent}%</p>/<p className="scorebar-wrong">{wrongScorePercent}%</p>
+      <div className="scorebar-left">
+        <p className="scorebar-percent">{correctScorePercent}%</p>
+        <p className="scorebar-correct">correct</p>
+        <p className="scorebar-total-score">({correctScore} of {totalScore})</p>
+      </div>
+      <div className="scorebar-right">
+        <p className="scorebar-current-streak">Current Streak: {streak}</p>
+      </div>
     </div>)
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    score: state.score
+    score: state.score,
+    streak: state.streak,
   }
 }
 
