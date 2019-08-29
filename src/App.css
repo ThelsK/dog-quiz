@@ -1,19 +1,31 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  /* background-color: #e6e9f0; */
+  background-color: #fff2e5; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #431c5d;
+  font-family: "Quattrocento", sans-serif;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+body, html {
+  min-height: 100%;
 }
 
 li {
   text-align: left;
+}
+
+a { 
+  text-decoration: none;
+  color: #431c5d;
+}
+
+a:hover {
+  color: #049dc8;
 }
