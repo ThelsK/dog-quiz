@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #e6e9f0;
+  /* background-color: #e6e9f0; */
+  background-color: #fff2e5; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,6 +10,11 @@
   font-size: calc(10px + 2vmin);
   color: #431c5d;
   font-family: "Quattrocento", sans-serif;
+  height: 100%;
+}
+
+body, html {
+  min-height: 100%;
 }
 
 li {
