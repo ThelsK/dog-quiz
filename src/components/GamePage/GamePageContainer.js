@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import { generateQuestion } from "../../actions/generateQuestion.js"
 import { clearActiveBreeds, addBreedsToActive, clearNewBreeds } from '../../actions/setActiveBreeds'
 import { addCorrect, addWrong, resetScore } from "../../actions/score.js"
 import QAPictureContainer from '../QAPicture'
@@ -21,14 +22,25 @@ class GamePageContainer extends React.Component {
   }
 
   receivedAnswer = event => {
+    if (this.state.answerStates.length) {
+      return
+    }
+
     const answerClicked = parseInt(event.target.id)
     this.setAnswerStates(this.props.currentQuestion.answers, answerClicked)
 
     if (this.props.currentQuestion.answers[answerClicked].isCorrect) {
       this.props.addCorrect()
+      setTimeout(this.startNextQuestion, 800)
     } else {
       this.props.addWrong()
+      setTimeout(this.startNextQuestion, 2000)
     }
+  }
+
+  startNextQuestion = () => {
+    this.setState({ answerStates: [] })
+    this.props.generateQuestion(this.props.activeBreeds)
   }
 
   setAnswerStates = (answers, answerClicked) =>
@@ -54,7 +66,7 @@ class GamePageContainer extends React.Component {
 
   render() {
     if (this.props.newBreeds.length) {
-      return <NewBreeds />
+      return <NewBreeds newBreeds={this.props.newBreeds} />
     }
     switch (this.props.currentQuestion.type) {
       case "picture":
@@ -74,6 +86,7 @@ const mapStateToProps = state =>
   })
 
 const mapDispatchToProps = {
+  generateQuestion,
   addCorrect,
   addWrong,
   resetScore,
