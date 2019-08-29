@@ -6,18 +6,31 @@
   display: flex;
 }
 
+.a-box {
+  margin-bottom: 2rem; 
+}
+
+.a-box h2 {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
 .answer {
-  padding: 3rem;
+  padding: 1rem 3rem 1rem 3rem;
   border: 3px solid #431c5d;
   margin: 1rem;
+  font-weight: bold;
+  color: #e6e9f0;
 }
 
 .answerWaiting {
-  background-color: purple;
+  background-color: #431c5d;
 }
 
 .answerWaiting:hover {
   background-color: yellow;
+  color: #431c5d;
 }
 
 .answerChooseCorrect,
