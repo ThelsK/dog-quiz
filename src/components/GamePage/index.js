@@ -8,13 +8,13 @@ class GamePageWrapper extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="game-page">
         <Scorebar />
         {this.props.breedsList.length
           ? <GamePageContainer />
           : "Loading..."
         }
-        <Link to="/" className="App-link">
+        <Link to="/" className="App-link return-home">
           Return Home
         </Link>
       </div>

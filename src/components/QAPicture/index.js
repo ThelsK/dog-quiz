@@ -5,7 +5,7 @@ import "./QA.css"
 
 export default class QAPictureContainer extends React.Component {
   render() {
-    return <div>
+    return <div className="q-a-box">
       <QAPictureQuestion
         question={this.props.currentQuestion.picture}
       />

@@ -6,35 +6,52 @@
   display: flex;
 }
 
+.a-box {
+  margin-bottom: 2rem; 
+}
+
+.a-box h2 {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
 .answer {
-  padding: 3rem;
+  padding: 1rem 3rem 1rem 3rem;
   border: 3px solid #431c5d;
   margin: 1rem;
+  font-weight: bold;
+  color: #e6e9f0;
 }
 
 .answerWaiting {
-  background-color: purple;
+  background-color: #431c5d;
 }
 
 .answerWaiting:hover {
   background-color: yellow;
+  color: #431c5d;
 }
 
 .answerChooseCorrect,
 .answerChooseCorrect:hover {
-  background-color: green;
+  background-color: #00b359;
+  border: 3px solid #00b359;
 }
 
 .answerChooseWrong,
 .answerChooseWrong:hover {
-  background-color: red;
+  background-color: #cc0033;
+  border: 3px solid #cc0033;
 }
 
 .wrong:hover {
-  background-color: red
+  background-color: #cc0033;
+  border: 3px solid #cc0033;
 } 
 .correct:hover {
-  background-color: green;
+  background-color: #00b359;
+  border: 3px solid #00b359;
 }
 
 img {
@@ -44,10 +61,12 @@ img {
 }
 .answerShowCorrect,
 .answerShowCorrect:hover {
-  background-color: blue;
+  background-color: #00b359;
+  border: 3px solid #00b359;
 }
 
 .answerShowWrong,
 .answerShowWrong:hover {
   background-color: gray;
+  border: 3px solid gray;
 }

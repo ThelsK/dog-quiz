@@ -4,7 +4,7 @@ export default class QAPictureAnswers extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="a-box">
         <h2>Answers:</h2>
         <div className="answers">
           {this.props.answers.map((answer, id) =>
