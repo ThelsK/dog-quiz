@@ -1,6 +1,5 @@
 import React from "react"
 import { connect } from "react-redux"
-import { generateQuestion } from "../../actions/generateQuestion.js"
 import { clearActiveBreeds, addBreedsToActive, clearNewBreeds } from '../../actions/setActiveBreeds'
 import { addCorrect, addWrong, resetScore } from "../../actions/score.js"
 import QAPictureContainer from '../QAPicture'
@@ -15,7 +14,10 @@ class GamePageContainer extends React.Component {
     this.props.resetScore()
     this.props.clearActiveBreeds()
     this.props.addBreedsToActive(this.props.activeBreeds, this.props.breedsList)
-    this.props.generateQuestion(this.props.activeBreeds)
+  }
+
+  componentWillUnmount() {
+    this.props.clearNewBreeds()
   }
 
   receivedAnswer = event => {
@@ -52,7 +54,6 @@ class GamePageContainer extends React.Component {
 
   render() {
     if (this.props.newBreeds.length) {
-      console.log("about to create NewBreeds component")
       return <NewBreeds />
     }
     switch (this.props.currentQuestion.type) {
@@ -73,7 +74,6 @@ const mapStateToProps = state =>
   })
 
 const mapDispatchToProps = {
-  generateQuestion,
   addCorrect,
   addWrong,
   resetScore,
