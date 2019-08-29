@@ -13,7 +13,7 @@ class BreedListContainer extends React.Component {
           ? <BreedList breedsList={this.props.breedsList}></BreedList>
           : "Loading..."
         }
-        <Link to="/" className="App-link return-home">
+        <Link to="/" className="return-home">
           Return Home
         </Link>
       </div >
