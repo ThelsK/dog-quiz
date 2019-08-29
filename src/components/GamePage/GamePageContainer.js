@@ -19,14 +19,13 @@ class GamePageContainer extends React.Component {
 
     // Add Active Breeds (Parameters: BreedsList, ???Amount???)
 
-    // Generate Question
+    // Generate Question needs to be loaded from within the NewBreeds component
 
     this.props.generateQuestion(this.props.breedsList)
   }
 
   receivedAnswer = event => {
     const answerClicked = parseInt(event.target.id)
-    console.log("GamePageContainer Received Answer:", answerClicked)
     this.setAnswerStates(this.props.currentQuestion.answers, answerClicked)
 
     if (this.props.currentQuestion.answers[answerClicked].isCorrect) {
@@ -36,13 +35,10 @@ class GamePageContainer extends React.Component {
     }
   }
 
-  setAnswerStates = (answers, answerClicked) => {
-    console.log("AnswerClicked:", answerClicked)
+  setAnswerStates = (answers, answerClicked) =>
     this.setState({
       answerStates: answers.map((answer, answerID) => {
         let answerClass = ""
-        console.log("answerID:", answerID)
-        console.log("Match:", (answerClicked === answerID))
 
         if (answerClicked === answerID) {
           answerClass += "Choose"
@@ -59,7 +55,6 @@ class GamePageContainer extends React.Component {
         return answerClass
       })
     })
-  }
 
   render() {
     switch (this.props.currentQuestion.type) {
