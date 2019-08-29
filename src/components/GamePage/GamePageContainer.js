@@ -15,18 +15,36 @@ class GamePageContainer extends React.Component {
     this.props.resetScore()
     this.props.clearActiveBreeds()
     this.props.addBreedsToActive(this.props.activeBreeds, this.props.breedsList)
+    document.onkeydown = this.handleKeyDown
   }
 
   componentWillUnmount() {
     this.props.clearNewBreeds()
+    document.onkeydown = null
   }
 
-  receivedAnswer = event => {
-    if (this.state.answerStates.length) {
+  handleKeyDown = event => {
+    switch (event.key) {
+      case "1":
+        this.handleAnswer(0)
+        break
+      case "2":
+        this.handleAnswer(1)
+        break
+      case "3":
+        this.handleAnswer(2)
+        break
+      default:
+    }
+  }
+
+  receivedAnswer = event =>
+    this.handleAnswer(parseInt(event.target.id))
+
+  handleAnswer = answerClicked => {
+    if (this.props.newBreeds.length || this.state.answerStates.length) {
       return
     }
-
-    const answerClicked = parseInt(event.target.id)
     this.setAnswerStates(this.props.currentQuestion.answers, answerClicked)
 
     if (this.props.currentQuestion.answers[answerClicked].isCorrect) {
@@ -74,7 +92,11 @@ class GamePageContainer extends React.Component {
     }
     switch (this.props.currentQuestion.type) {
       case "picture":
-        return <QAPictureContainer currentQuestion={this.props.currentQuestion} answerStates={this.state.answerStates} receivedAnswer={this.receivedAnswer} />
+        return (<QAPictureContainer
+          currentQuestion={this.props.currentQuestion}
+          answerStates={this.state.answerStates}
+          receivedAnswer={this.receivedAnswer}
+        />)
       default:
         return "Loading Quiz..."
     }
