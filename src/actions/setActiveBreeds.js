@@ -1,10 +1,11 @@
-export const RESET_ACTIVE_BREEDS = 'RESET_ACTIVE_BREEDS'
+export const CLEAR_ACTIVE_BREEDS = 'CLEAR_ACTIVE_BREEDS'
 export const ADD_BREEDS_TO_ACTIVE = 'ADD_BREEDS_TO_ACTIVE'
 export const SET_NEW_BREEDS = 'SET_NEW_BREED'
+export const CLEAR_NEW_BREEDS = 'CLEAR_NEW_BREEDS'
 
-export const resetActiveBreeds = () => (dispatch) => {
+export const clearActiveBreeds = () => (dispatch) => {
   const action = {
-    type: RESET_ACTIVE_BREEDS,
+    type: CLEAR_ACTIVE_BREEDS,
   }
   dispatch(action)
 }
@@ -30,4 +31,11 @@ export const addBreedsToActive = (activeBreeds, breedsList) => (dispatch) => {
 
   dispatch(actionAddToActive)
   dispatch(actionSetNewBreeds)
+}
+
+export const clearNewBreeds = () => (dispatch) => {
+  const action = {
+    type: CLEAR_NEW_BREEDS
+  }
+  dispatch(action)
 }

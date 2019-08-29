@@ -1,9 +1,10 @@
 import React from "react"
 import { connect } from "react-redux"
 import { generateQuestion } from "../../actions/generateQuestion.js"
-import { resetActiveBreeds, addBreedsToActive } from '../../actions/setActiveBreeds'
+import { clearActiveBreeds, addBreedsToActive, clearNewBreeds } from '../../actions/setActiveBreeds'
 import { addCorrect, addWrong, resetScore } from "../../actions/score.js"
 import QAPictureContainer from '../QAPicture'
+import NewBreeds from '../NewBreeds'
 
 class GamePageContainer extends React.Component {
   state = {
@@ -12,7 +13,7 @@ class GamePageContainer extends React.Component {
 
   componentDidMount() {
     this.props.resetScore()
-    this.props.resetActiveBreeds()
+    this.props.clearActiveBreeds()
     this.props.addBreedsToActive(this.props.activeBreeds, this.props.breedsList)
     this.props.generateQuestion(this.props.activeBreeds)
   }
@@ -50,6 +51,10 @@ class GamePageContainer extends React.Component {
     })
 
   render() {
+    if (this.props.newBreeds.length) {
+      console.log("about to create NewBreeds component")
+      return <NewBreeds />
+    }
     switch (this.props.currentQuestion.type) {
       case "picture":
         return <QAPictureContainer currentQuestion={this.props.currentQuestion} answerStates={this.state.answerStates} receivedAnswer={this.receivedAnswer} />
@@ -63,8 +68,8 @@ const mapStateToProps = state =>
   ({
     breedsList: state.breedsList,
     currentQuestion: state.currentQuestion,
-    activeBreeds: state.activeBreeds
-
+    activeBreeds: state.activeBreeds,
+    newBreeds: state.newBreeds,
   })
 
 const mapDispatchToProps = {
@@ -72,8 +77,9 @@ const mapDispatchToProps = {
   addCorrect,
   addWrong,
   resetScore,
-  resetActiveBreeds,
-  addBreedsToActive
+  clearActiveBreeds,
+  addBreedsToActive,
+  clearNewBreeds,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePageContainer)
