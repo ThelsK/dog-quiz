@@ -69,7 +69,7 @@ const generateIncorrectIndexes = (breedsList, correctIndex, totalAnswers) => {
   const incorrectIndexes = []
   while (incorrectIndexes.length < totalAnswers - 1) {
     const randomIndex = Math.floor(Math.random() * breedsList.length)
-    if (randomIndex !== correctIndex && !incorrectIndexes.includes[randomIndex]) {
+    if (randomIndex !== correctIndex && !incorrectIndexes.includes(randomIndex)) {
       incorrectIndexes.push(randomIndex)
     }
   }

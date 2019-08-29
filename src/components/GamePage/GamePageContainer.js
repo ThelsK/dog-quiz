@@ -1,8 +1,9 @@
 import React from "react"
 import { connect } from "react-redux"
-import { generateQuestion } from "../../actions/generateQuestion.js"
+import { clearActiveBreeds, addBreedsToActive, clearNewBreeds } from '../../actions/setActiveBreeds'
 import { addCorrect, addWrong, resetScore } from "../../actions/score.js"
 import QAPictureContainer from '../QAPicture'
+import NewBreeds from '../NewBreeds'
 
 class GamePageContainer extends React.Component {
   state = {
@@ -10,18 +11,13 @@ class GamePageContainer extends React.Component {
   }
 
   componentDidMount() {
-    console.log("GamePageContainer Did Mount")
     this.props.resetScore()
+    this.props.clearActiveBreeds()
+    this.props.addBreedsToActive(this.props.activeBreeds, this.props.breedsList)
+  }
 
-    // Reset Score
-
-    // Reset Active Breeds
-
-    // Add Active Breeds (Parameters: BreedsList, ???Amount???)
-
-    // Generate Question needs to be loaded from within the NewBreeds component
-
-    this.props.generateQuestion(this.props.breedsList)
+  componentWillUnmount() {
+    this.props.clearNewBreeds()
   }
 
   receivedAnswer = event => {
@@ -57,6 +53,9 @@ class GamePageContainer extends React.Component {
     })
 
   render() {
+    if (this.props.newBreeds.length) {
+      return <NewBreeds />
+    }
     switch (this.props.currentQuestion.type) {
       case "picture":
         return <QAPictureContainer currentQuestion={this.props.currentQuestion} answerStates={this.state.answerStates} receivedAnswer={this.receivedAnswer} />
@@ -69,14 +68,18 @@ class GamePageContainer extends React.Component {
 const mapStateToProps = state =>
   ({
     breedsList: state.breedsList,
-    currentQuestion: state.currentQuestion
+    currentQuestion: state.currentQuestion,
+    activeBreeds: state.activeBreeds,
+    newBreeds: state.newBreeds,
   })
 
 const mapDispatchToProps = {
-  generateQuestion,
   addCorrect,
   addWrong,
   resetScore,
+  clearActiveBreeds,
+  addBreedsToActive,
+  clearNewBreeds,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePageContainer)
