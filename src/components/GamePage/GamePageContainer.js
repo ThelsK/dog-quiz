@@ -3,11 +3,14 @@ import { connect } from "react-redux"
 import { generateQuestion } from "../../actions/generateQuestion.js"
 import QAPictureContainer from '../QAPicture/QAPictureContainer'
 import Scorebar from "../Scorebar"
+import { resetActiveBreeds, addBreedsToActive } from '../../actions/setActiveBreeds'
 
 class GamePageContainer extends React.Component {
 
   componentDidMount() {
-    this.props.generateQuestion(this.props.breedsList)
+    this.props.resetActiveBreeds()
+    this.props.addBreedsToActive(this.props.activeBreeds, this.props.breedsList)
+    this.props.generateQuestion(this.props.activeBreeds)
   }
 
   render() {
@@ -26,9 +29,11 @@ class GamePageContainer extends React.Component {
 const mapStateToProps = state =>
   ({
     breedsList: state.breedsList,
-    currentQuestion: state.currentQuestion
+    currentQuestion: state.currentQuestion,
+    activeBreeds: state.activeBreeds
+
   })
 
-const mapDispatchToProps = { generateQuestion }
+const mapDispatchToProps = { generateQuestion, resetActiveBreeds, addBreedsToActive }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePageContainer)
