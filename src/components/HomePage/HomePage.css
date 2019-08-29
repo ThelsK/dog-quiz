@@ -1,0 +1,31 @@
+.home-page {
+  height: 50rem;
+  width: 90rem;
+  
+}
+
+.home-page-links-box {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: stretch;
+  justify-content: space-evenly
+}
+
+.home-page-link {
+  background-color: burlywood;
+  margin: 10px 5px 10px 5px;
+  padding: 2rem;
+  height: 230px;
+  width: 450px;
+}
+
+.link-heading {
+  font-size: calc(15px + 2vmin);
+  font-weight: solid
+}
+
+.link-description {
+  font-size: calc(4px + 2vmin);
+  /* text-justify: jus */
+}
+

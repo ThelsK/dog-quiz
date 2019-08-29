@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import './BreedListPage.css'
 
 export default function BreedList(props) {
   return (

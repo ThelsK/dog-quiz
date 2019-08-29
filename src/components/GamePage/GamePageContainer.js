@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { generateQuestion } from "../../actions/generateQuestion.js"
 import QAPictureContainer from '../QAPicture/QAPictureContainer'
 import Scorebar from "../Scorebar"
+import Title from '../Title'
 
 class GamePageContainer extends React.Component {
 
@@ -13,9 +14,7 @@ class GamePageContainer extends React.Component {
   render() {
     return (
       <div>
-        <h1>
-          Game Page
-        </h1>
+        <Title title="Game Page"/>
         <Scorebar />
         <QAPictureContainer currentQuestion={this.props.currentQuestion} />
       </div>
