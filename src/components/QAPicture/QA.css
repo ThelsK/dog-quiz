@@ -1,3 +1,7 @@
+.question {
+  max-height: 400px;
+}
+
 .answers {
   display: flex;
 }
@@ -8,19 +12,21 @@
   margin: 1rem;
 }
 
-.answer:hover {
-  background-color:rgba(255, 255, 255, 0.1);
+.answerWaiting {
+  background-color: purple;
 }
 
-.question {
-  max-height: 400px;
+.answerWaiting:hover {
+  background-color: yellow;
 }
 
-.correct {
+.answerChooseCorrect,
+.answerChooseCorrect:hover {
   background-color: green;
 }
 
-.wrong {
+.answerChooseWrong,
+.answerChooseWrong:hover {
   background-color: red;
 }
 
@@ -35,4 +41,13 @@ img {
   -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
+}
+.answerShowCorrect,
+.answerShowCorrect:hover {
+  background-color: blue;
+}
+
+.answerShowWrong,
+.answerShowWrong:hover {
+  background-color: gray;
 }
