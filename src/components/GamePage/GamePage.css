@@ -49,17 +49,18 @@
   font-size: 1.35rem;
   font-weight: bold;
   color: #e6e9f0;
-  max-height: 16rem;
-  /* width: 200px; */
+  width: 200px;
   display: flex;
   align-items: flex-end;
 }
 
 .answerpicture {
-  /* max-width: 100%; */
-  /* max-width: 90vw; */
-  height: 15rem;
-  /* margin: 0.5rem; */
+  max-width: 100%;
+}
+
+.answerWaiting {
+  border: 3px solid #431c5d;
+  background-color: #431c5d;
 }
 
 .answerWaiting {
