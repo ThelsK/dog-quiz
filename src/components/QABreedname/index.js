@@ -11,6 +11,7 @@ export default class QABreednameContainer extends React.Component {
       <QABreednameAnswers
         answers={this.props.currentQuestion.answers}
         answerStates={this.props.answerStates}
+        answerText={this.props.answerText}
         handleClickAnswer={this.props.handleClickAnswer}
         hotkeys={this.props.hotkeys}
       />

@@ -5,7 +5,7 @@ export default class QABreednameAnswers extends React.Component {
     return (
       <div className="answerbox">
         <h4 className="answertitle">
-          Answers:
+          {this.props.answerText}
         </h4>
         <div className="answers">
           {this.props.answers.map((answer, id) =>

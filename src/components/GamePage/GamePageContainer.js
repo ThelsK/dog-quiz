@@ -12,6 +12,7 @@ const hotkeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "="]
 class GamePageContainer extends React.Component {
   state = {
     answerStates: [],
+    answerText: "Choose your answer:"
   }
 
   componentDidMount() {
@@ -55,7 +56,7 @@ class GamePageContainer extends React.Component {
   }
 
   startNextQuestion = () => {
-    this.setState({ answerStates: [] })
+    this.setState({ answerStates: [], answerText: "Choose your answer:" })
     if (!this.props.streak || this.props.streak % 5) {
       this.props.generateQuestion(this.props.activeBreeds, this.props.gameType, [], this.props.totalAnswers)
     } else {
@@ -81,7 +82,10 @@ class GamePageContainer extends React.Component {
         }
 
         return answerClass
-      })
+      }),
+      answerText: (answers[answerChosen].isCorrect)
+        ? "Well done!"
+        : "Too bad!"
     })
 
   render() {
@@ -97,6 +101,7 @@ class GamePageContainer extends React.Component {
         return (<QAPictureContainer
           currentQuestion={this.props.currentQuestion}
           answerStates={this.state.answerStates}
+          answerText={this.state.answerText}
           handleClickAnswer={this.handleClickAnswer}
           hotkeys={hotkeys}
         />)
@@ -104,6 +109,7 @@ class GamePageContainer extends React.Component {
         return (<QABreednameContainer
           currentQuestion={this.props.currentQuestion}
           answerStates={this.state.answerStates}
+          answerText={this.state.answerText}
           handleClickAnswer={this.handleClickAnswer}
           hotkeys={hotkeys}
         />)
