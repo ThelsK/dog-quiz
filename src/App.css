@@ -1,16 +1,14 @@
 .App {
   text-align: center;
-  background-color: #fff2e5; 
-  min-height: 100vh;
-  /* min-width: 100vw; */
+  background-color: #fff2e5;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: #431c5d;
   font-family: "Quattrocento", sans-serif;
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 }
 

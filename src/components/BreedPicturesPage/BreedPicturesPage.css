@@ -22,7 +22,8 @@
 
 .breed-pictures-nav {
   margin: auto;
-  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: nowrap;
   width: 80vw;
   justify-content: space-between;
 }
