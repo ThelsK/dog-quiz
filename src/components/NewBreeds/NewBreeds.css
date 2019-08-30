@@ -2,8 +2,9 @@
   display: flex;
   align-items: flex-end;
   margin-top: 1rem;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
+  max-width: 100%;
 }
 
 .hint {
@@ -11,8 +12,12 @@
   justify-content: flex-end;
 }
 
+.hint h2 {
+  margin-top: 0.3rem;
+}
+
 .hintpicture {
-  /* max-width: 30vw; */
+  max-width: 90vw;
   max-height: 18rem;
   margin: 0.5rem;
 }
