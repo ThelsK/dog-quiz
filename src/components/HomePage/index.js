@@ -4,6 +4,10 @@ import Title from "../Title"
 import "./HomePage.css"
 
 class HomePage extends React.Component {
+  componentDidMount() {
+    document.title = "MOTh's Dog Quiz App"
+  }
+
   render() {
     return (
       <div className="home-page">
