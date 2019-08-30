@@ -1,7 +1,8 @@
 .question {
   /* max-height: 400px;
    */
-   max-height: 40vh;
+   max-height: 20rem;
+   max-width: 100vw;
 }
 
 .answers {
@@ -85,7 +86,8 @@ img {
 }
 
 .game-page {
-  max-width: 700px;
+  /* max-width: 600px; */
+  max-width: 100vw;
 }
 
 @media only screen and (max-width: 600px) {
