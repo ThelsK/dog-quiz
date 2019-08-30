@@ -6,8 +6,7 @@ import "./NewBreeds.css"
 
 class NewBreeds extends React.Component {
   componentDidMount() {
-    const starting = this.props.activeBreeds.length === this.props.newBreeds.length
-    document.title = starting ? "New Game" : "New Level"
+    document.title = "MOTh's Dog Quiz"
   }
 
   startNextQuestion = () => {
