@@ -1,14 +1,19 @@
 .breed-list-page {
-  height: 100vh;
+  /* height: 100vh; */
+  max-height: 100%;
+  /* min-height: 50rem; */
 }
 
 ul {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  /* margin-top: 3rem; */
+  /* margin-bottom: 4rem; */
   -webkit-column-count: 5;
      -moz-column-count: 5;
           column-count: 5;
-       list-style-type: none;
+  -webkit-column-width: 150px;
+      -moz-column-width: 150px;
+          column-width: 150px;
+  list-style-type: none;
 }
 
 li {
@@ -21,7 +26,9 @@ li {
 a.return-home, .return-home {
   background-color: #bccbde;
   color: #431c5d;
-  padding: 8px;
+  /* padding: 8px; */
+  padding: 0.5rem;
   box-shadow: 0px 10px 13px -7px #000000;
   margin: 2rem 2rem 2rem 2rem;
+  bottom: 2px;
 }

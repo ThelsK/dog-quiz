@@ -1,13 +1,20 @@
 .question {
-  max-height: 400px;
+  /* max-height: 400px;
+   */
+   max-height: 40vh;
 }
 
 .answers {
   display: flex;
 }
 
+.q-a-box {
+  max-width: 700px;
+}
+
 .a-box {
   margin-bottom: 2rem; 
+  max-width: 600px;
 }
 
 .a-box h2 {
@@ -17,7 +24,8 @@
 }
 
 .answer {
-  padding: 1rem 3rem 1rem 3rem;
+  max-width: 140px;
+  padding: 1rem 2rem 1rem 2rem;
   border: 3px solid #431c5d;
   margin: 1rem;
   font-weight: bold;
@@ -29,7 +37,9 @@
 }
 
 .answerWaiting:hover {
-  background-color: yellow;
+  background-color: #ffff66;
+  -webkit-transition: 0.2s; /* Safari prior 6.1 */
+  transition: 0.2s;
   color: #431c5d;
 }
 
@@ -37,17 +47,20 @@
 .answerChooseCorrect:hover {
   background-color: #00b359;
   border: 3px solid #00b359;
+  transform: scale(1.2)
 }
 
 .answerChooseWrong,
 .answerChooseWrong:hover {
   background-color: #cc0033;
   border: 3px solid #cc0033;
+  transform: scale(1.2)
 }
 
 .wrong:hover {
   background-color: #cc0033;
   border: 3px solid #cc0033;
+  transform: scale(1.1)
 } 
 .correct:hover {
   background-color: #00b359;
@@ -69,4 +82,21 @@ img {
 .answerShowWrong:hover {
   background-color: gray;
   border: 3px solid gray;
+}
+
+.game-page {
+  max-width: 700px;
+}
+
+@media only screen and (max-width: 600px) {
+  .answers {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .answer {
+    width: 200px;
+  }
 }

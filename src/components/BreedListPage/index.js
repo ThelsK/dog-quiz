@@ -13,10 +13,12 @@ class BreedListContainer extends React.Component {
           ? <BreedList breedsList={this.props.breedsList}></BreedList>
           : "Loading..."
         }
-        <Link to="/" className="return-home">
+        {/* <Link to="/" className="App-link return-home">
           Return Home
-        </Link>
+        </Link> */}
+        <br></br>
       </div >
+      
     )
   }
 }

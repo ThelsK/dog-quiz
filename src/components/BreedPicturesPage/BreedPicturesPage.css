@@ -6,10 +6,13 @@
 }
 
 .breed-picture {
-  height: 20rem;
+  /* max-width: 600px; */
+  /* max-height: 20rem; */
+  max-height: 20vh;
   padding: 2rem;
   padding: 0;
-  margin: 2rem
+  margin: 2rem;
+  object-fit: fill;
 }
 
 .breed-pictures-page {
@@ -24,4 +27,11 @@
   flex-wrap: wrap;
   width: 80vw;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .breed-picture {
+    width: 100%;
+  }
+
 }
