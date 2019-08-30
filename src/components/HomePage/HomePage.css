@@ -39,8 +39,9 @@
 
 .logo{
   box-shadow: initial;
-  width: 20vw;
+  max-width: 20vw;
+  max-height: 14vh;
   filter: invert(14%) sepia(39%) saturate(2598%) hue-rotate(252deg) brightness(96%) contrast(100%);
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
