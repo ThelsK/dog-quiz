@@ -27,9 +27,11 @@ class GamePageContainer extends React.Component {
   }
 
   handleKeyDown = event => {
-    for (let index = 0; index < this.props.currentQuestion.answers.length; index++) {
-      if (hotkeys.length < index && hotkeys[index] === event.key) {
-        this.handleAnswer(index)
+    if (this.props.currentQuestion.answers) {
+      for (let index = 0; index < this.props.currentQuestion.answers.length; index++) {
+        if (index < hotkeys.length && hotkeys[index] === event.key) {
+          this.handleAnswer(index)
+        }
       }
     }
   }
