@@ -2,6 +2,9 @@
   display: flex;
   align-items: flex-end;
   margin-top: 1rem;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  max-width: 100%;
 }
 
 .hint {
@@ -9,8 +12,14 @@
   justify-content: flex-end;
 }
 
+.hint h2 {
+  margin-top: 0.3rem;
+}
+
 .hintpicture {
-  max-width: 30vw;
+  max-width: 90vw;
+  max-height: 18rem;
+  margin: 0.5rem;
 }
 
 .hintbox {
@@ -20,10 +29,19 @@
 }
 
 .start-button {
-  background-color: #bccbde;
-  color: #431c5d;
+  background-color: #431c5d;
+  color: #e6e9f0;
   padding: 8px;
+  border: 1px solid #431c5d;
   box-shadow: 0px 10px 13px -7px #000000;
   margin: 1rem 2rem 2rem 2rem;
-  font-size: calc(10px + 2vmin);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@media only screen and (max-width: 600px) {
+  .hints {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
 }
