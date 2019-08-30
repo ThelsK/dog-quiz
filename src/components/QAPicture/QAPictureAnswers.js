@@ -11,8 +11,8 @@ export default class QAPictureAnswers extends React.Component {
           {this.props.answers.map((answer, id) =>
             <div
               className={(this.props.answerStates.length > id)
-                ? "answer answer".concat(this.props.answerStates[id])
-                : "answer answerWaiting"}
+                ? "answerBreedname answer".concat(this.props.answerStates[id])
+                : "answerBreedname answerWaiting"}
               key={id}
               id={id}
               onClick={this.props.handleClickAnswer}
