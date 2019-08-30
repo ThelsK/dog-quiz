@@ -4,6 +4,9 @@ import './BreedPicturesPage.css'
 import BreedPicturesPageContainer from './BreedPicturesPageContainer'
 
 class BreedPicturesPage extends React.Component {
+  componentDidMount() {
+    document.title = this.props.match.params.breedname
+  }
 
   render() {
     if (this.props.breedsList && this.props.breedsList.length) {
