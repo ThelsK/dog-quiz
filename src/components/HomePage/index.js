@@ -21,7 +21,7 @@ class HomePage extends React.Component {
               List of dog breeds
             </h3>
             <p className="link-description">
-              Go to the list of the breeds and check out their cute pictures.
+              Browse a list of dog breeds and check out their cute pictures.
             </p>
           </Link>
 
@@ -30,7 +30,7 @@ class HomePage extends React.Component {
               Identify the dog in the picture
             </h3>
             <p className="link-description">
-              Play a game where you are given a single picture and have to guess the correct name of the dog breed from three different answers.
+              Play a game where you are shown a picture and have to guess the correct name of the dog breed from three different answers.
             </p>
           </Link>
 
@@ -39,7 +39,7 @@ class HomePage extends React.Component {
               What does the dog look like
             </h3>
             <p className="link-description">
-              Play a game where you are given the name of a dog breed and have to guess which picture portrays a dog of that particular breed.
+              Play a game where you are given the name of a dog breed and have to guess which of the pictures has a dog of that breed.
             </p>
           </Link>
 
@@ -48,7 +48,7 @@ class HomePage extends React.Component {
               A mixture of both games
             </h3>
             <p className="link-description">
-              Play a game where both of the above are mixed and matched. Sometimes you have to guess the name with the picture, and sometimes you have to guess the picture with the name.
+              Play a combination of the other two games. Sometimes you have to guess which dog is on a picture, and sometimes you have to guess which picture depicts a certain breed.
             </p>
           </Link>
 
