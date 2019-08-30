@@ -9,11 +9,14 @@ export default function BreedList(props) {
         {props.breedsList.map((breed, id) =>
           <li key={id}>
             <Link to={`/breeds/${breed.breedname}`} className="App-link">
-              {breed.breedname.slice(0, 1).toUpperCase()}{breed.breedname.slice(1)}
+              {breed.breedname}
             </Link>
           </li>
         )}
       </ul>
+      <Link to="/" className="return-home action-btn">
+          Return Home
+        </Link>
     </div>
   )
 }

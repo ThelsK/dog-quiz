@@ -1,10 +1,13 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 import BreedList from "./BreedList.js"
 import Title from "../Title"
 
 class BreedListContainer extends React.Component {
+  componentDidMount() {
+    document.title = "List of Dog Breeds"
+  }
+
   render() {
     return (
       <div className="breed-list-page">
@@ -13,10 +16,9 @@ class BreedListContainer extends React.Component {
           ? <BreedList breedsList={this.props.breedsList}></BreedList>
           : "Loading..."
         }
-        <Link to="/" className="App-link return-home">
-          Return Home
-        </Link>
+        <br></br>
       </div >
+
     )
   }
 }

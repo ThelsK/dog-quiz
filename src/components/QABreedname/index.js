@@ -1,14 +1,14 @@
 import React from "react"
-import QAPictureQuestion from "./QAPictureQuestion";
-import QAPictureAnswers from "./QAPictureAnswers";
+import QABreednameQuestion from "./QABreednameQuestion";
+import QABreednameAnswers from "./QABreednameAnswers";
 
-export default class QAPictureContainer extends React.Component {
+export default class QABreednameContainer extends React.Component {
   render() {
     return <div className="qabox">
-      <QAPictureQuestion
-        question={this.props.currentQuestion.picture}
+      <QABreednameQuestion
+        question={this.props.currentQuestion.breedname}
       />
-      <QAPictureAnswers
+      <QABreednameAnswers
         answers={this.props.currentQuestion.answers}
         answerStates={this.props.answerStates}
         answerText={this.props.answerText}

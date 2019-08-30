@@ -10,9 +10,15 @@ export const clearActiveBreeds = () => (dispatch) => {
   dispatch(action)
 }
 
-export const addBreedsToActive = (activeBreeds, breedsList) => (dispatch) => {
+export const addBreedsToActive = (activeBreeds, breedsList, totalAnswers = 3) => (dispatch) => {
+
+  if (totalAnswers > breedsList.length - activeBreeds.length) {
+    totalAnswers = breedsList.length - activeBreeds.length
+  }
+
   const newBreeds = []
-  while (newBreeds.length < 3) {
+
+  while (newBreeds.length < totalAnswers) {
     const newBreed = breedsList[Math.floor(Math.random() * breedsList.length)]
     if (!activeBreeds.includes(newBreed) && !newBreeds.includes(newBreed)) {
       newBreeds.push(newBreed)

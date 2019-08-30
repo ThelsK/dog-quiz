@@ -1,0 +1,129 @@
+.game-page {
+  width: 100%;
+}
+
+.qabox {
+  width: 100%;
+}
+
+.questionbox {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.questiontitle {
+  margin: 1rem;
+}
+
+.question {
+   max-height: 20rem;
+   max-width: 80vw;
+}
+
+.answertitle {
+  padding: 0;
+  margin: 0;
+}
+
+.answerbox {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.answertitle {
+  padding: 0;
+  margin: 0;
+}
+
+.answers {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.answerBreedname {
+  padding: 15px;
+  margin: 15px;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #e6e9f0;
+  width: 200px;
+}
+
+.answer {
+  padding: 15px;
+  margin: 15px;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #e6e9f0;
+  /* width: 200px; */
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.answerpicture {
+  max-width: 90vw;
+  max-height: 18rem;
+}
+
+.imageNumber {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin: 1rem 0 0 0;
+}
+
+.answerWaiting {
+  border: 3px solid #431c5d;
+  background-color: #431c5d;
+}
+
+.answerWaiting:hover {
+  border: 3px solid #431c5d;
+  background-color: #ffff66;
+  -webkit-transition: 0.2s; /* Safari prior 6.1 */
+  transition: 0.2s;
+  color: #431c5d;
+}
+
+.answerChooseCorrect,
+.answerChooseCorrect:hover {
+  background-color: #00b359;
+  border: 3px solid #00b359;
+  transform: scale(1.2)
+}
+
+.answerChooseWrong,
+.answerChooseWrong:hover {
+  background-color: #cc0033;
+  border: 3px solid #cc0033;
+  transform: scale(1.2)
+}
+
+.answerShowCorrect,
+.answerShowCorrect:hover {
+  background-color: #00b359;
+  border: 3px solid #00b359;
+}
+
+.answerShowWrong,
+.answerShowWrong:hover {
+  background-color: gray;
+  border: 3px solid gray;
+}
+
+.photo {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+@media only screen and (max-width: 820px) {
+  .answers {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}

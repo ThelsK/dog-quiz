@@ -2,15 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  justify-content: center;
   align-items: center;
 }
 
 .breed-picture {
-  height: 20rem;
+  max-height: 20rem;
   padding: 2rem;
   padding: 0;
-  margin: 2rem
+  margin: 2rem;
+  object-fit: fill;
 }
 
 .breed-pictures-page {
@@ -18,4 +18,12 @@
   width: 100%;
   flex-direction: column;
   display: flex;
+}
+
+.breed-pictures-nav {
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80vw;
+  justify-content: space-between;
 }

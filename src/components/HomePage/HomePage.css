@@ -1,10 +1,15 @@
 .home-page {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .home-page-links-box {
-  height: 50rem;
-  width: 90rem;
+  max-height: 100%;
+  max-width: 80rem;
   margin: 3rem;
   display: flex;
   flex-flow: row wrap;
@@ -16,8 +21,13 @@
   background-color: #bccbde;
   margin: 10px 5px 10px 5px;
   padding: 2rem;
-  height: 230px;
-  width: 450px;
+  max-height: 100rem;
+  max-width: 450px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.home-page-link:after {
+  padding-bottom: 100%;
 }
 
 .link-heading {
@@ -30,6 +40,14 @@
   border-top: 1px solid #431c5d;
   font-size: calc(5px + 2vmin);
   text-align: justify;
-  line-height: 2rem;
+  line-height: 1.6rem;
+}
+
+.logo{
+  box-shadow: initial;
+  max-width: 20vw;
+  max-height: 14vh;
+  filter: invert(14%) sepia(39%) saturate(2598%) hue-rotate(252deg) brightness(96%) contrast(100%);
+  margin-top: 1rem;
 }
 

@@ -2,43 +2,58 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Title from "../Title"
 import "./HomePage.css"
+import MOThdog from "../../images/MOThdog.png"
 
 class HomePage extends React.Component {
+  componentDidMount() {
+    document.title = "MOTh's Dog Quiz App"
+  }
+
   render() {
     return (
       <div className="home-page">
+        <img className="logo" src={MOThdog} alt="MOTh Logo" />
         <Title title="MOTh's Dog Quiz" />
         <div className="home-page-links-box">
-          <div className="home-page-link">
-            <Link to="/breeds/" className="App-link link-heading">
+
+          <Link to="/breeds/" className="home-page-link">
+            <h3 className="link-heading">
               List of dog breeds
-        </Link>
-            <p className="link-description">Check the list of the breeds and their pictures</p>
-          </div>
+            </h3>
+            <p className="link-description">
+              Browse a list of dog breeds and check out their cute pictures.
+            </p>
+          </Link>
 
-          <div className="home-page-link">
-            <Link to="/game/picture" className="App-link link-heading">
+          <Link to="/game/picture" className="home-page-link">
+            <h3 className="link-heading">
               Identify the dog in the picture
-        </Link>
-            <p className="link-description">Play a game where you are given a single picture and have to guess the correct name of the dog breed from three different answers.</p>
-          </div>
+            </h3>
+            <p className="link-description">
+              Play a game where you are shown a picture and have to guess the correct name of the dog breed from three different answers.
+            </p>
+          </Link>
 
-          <div className="home-page-link">
-            <Link to="/game/breedname" className="App-link link-heading">
+          <Link to="/game/breedname" className="home-page-link">
+            <h3 className="link-heading">
               What does the dog look like
-        </Link>
-            <p className="link-description">Play a game where you are given the name of a dog breed and have to guess which picture portrays a dog of that particular breed.</p>
-          </div>
+            </h3>
+            <p className="link-description">
+              Play a game where you are given the name of a dog breed and have to guess which of the pictures has a dog of that breed.
+            </p>
+          </Link>
 
-          <div className="home-page-link">
-            <Link to="/game/mixed" className="App-link link-heading">
+          <Link to="/game/mixed" className="home-page-link">
+            <h3 className="link-heading">
               A mixture of both games
-        </Link>
-            <p className="link-description">Play a game where both of the above are mixed and matched. Sometimes you have to guess the name with the picture, and sometimes you have to guess the picture with the name.</p>
-          </div>
-        </div>
+            </h3>
+            <p className="link-description">
+              Play a combination of the other two games. Sometimes you have to guess which dog is on a picture, and sometimes you have to guess which picture depicts a certain breed.
+            </p>
+          </Link>
 
-      </div>
+        </div >
+      </div >
     )
   }
 }

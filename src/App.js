@@ -22,7 +22,7 @@ class App extends React.Component {
           <Route path="/breeds/:breedname" component={BreedPicturesPage} />
           <Route path="/game/:gametype" component={GamePageWrapper} />
         </div>
-      </BrowserRouter>
+      </BrowserRouter >
     )
   }
 }
