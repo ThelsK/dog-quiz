@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import Title from "../Title"
 
 export default class BreedPicturesPageContainer extends React.Component {
@@ -18,26 +19,51 @@ export default class BreedPicturesPageContainer extends React.Component {
     return output
   }
 
-  capitalize = (s) => {
-    if (typeof s !== 'string') return ''
-    return s.charAt(0).toUpperCase() + s.slice(1)
-  }
-
   renderPictures() {
-      const currentBreedName = this.props.breedName
-      const currentBreedObject = this.props.breedsList.find(breed => breed.breedname === currentBreedName)
-      const breedTenPictures = this.randomize(currentBreedObject.pictures)
-      return (
-        <div className="breed-pictures-box">
-          {breedTenPictures.map(breed => <img className="breed-picture" key={breed} alt="breed" src={breed} />)}
-        </div>
-      )
+    const currentBreedName = this.props.breedName
+    const currentBreedObject = this.props.breedsList.find(breed => breed.breedname === currentBreedName)
+    const breedTenPictures = this.randomize(currentBreedObject.pictures)
+    return (
+      <div className="breed-pictures-box">
+        {breedTenPictures.map(breed => <img className="breed-picture" key={breed} alt="breed" src={breed} />)}
+      </div>
+    )
   }
 
   render() {
-    return (<div className="breed-pictures-page">
-      <Title title={this.capitalize(this.props.breedName)} />
-      {this.renderPictures()}
-      </div>)
+    const breednames = this.props.breedsList.map(breed => breed.breedname)
+    const index = breednames.indexOf(this.props.breedName)
+
+    let previousDog = ""
+    if (index === 0) {
+      previousDog = breednames[breednames.length - 1]
+    } else {
+      previousDog = breednames[index - 1]
+    }
+
+    let nextDog = ""
+    if (index === breednames.length - 1) {
+      nextDog = breednames[0]
+    } else {
+      nextDog = breednames[index + 1]
+    }
+
+    return (
+      <div className="breed-pictures-page">
+        <Title title={this.props.breedName} />
+        {this.renderPictures()}
+        <div className="breed-pictures-nav">
+          <Link to={`/breeds/${previousDog}`} className="return-home">
+            {`<< ${previousDog}`}
+          </Link>
+          <Link to="/breeds/" className="return-home">
+            Return to List
+          </Link>
+          <Link to={`/breeds/${nextDog}`} className="return-home">
+            {`${nextDog} >>`}
+          </Link>
+        </div>
+      </div>
+    )
   }
 }

@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  justify-content: center;
   align-items: center;
 }
 
@@ -27,4 +26,9 @@
   .breed-picture {
     width: 100%;
   }
+.breed-pictures-nav {
+  margin: auto;
+  flex-wrap: wrap;
+  width: 80vw;
+  justify-content: space-between;
 }
