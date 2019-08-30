@@ -7,7 +7,7 @@ import "./NewBreeds.css"
 class NewBreeds extends React.Component {
 
   startNextQuestion = () => {
-    this.props.generateQuestion(this.props.activeBreeds)
+    this.props.generateQuestion(this.props.activeBreeds, this.props.gameType, [], this.props.totalAnswers)
     this.props.clearNewBreeds()
   }
 
