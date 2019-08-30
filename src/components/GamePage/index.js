@@ -11,7 +11,10 @@ class GamePageWrapper extends React.Component {
       <div className="game-page">
         <Scorebar />
         {this.props.breedsList.length
-          ? <GamePageContainer />
+          ? <GamePageContainer
+            gameType={this.props.match.params.gametype}
+            totalAnswers={3}
+          />
           : "Loading..."
         }
         <Link to="/" className="App-link return-home">
