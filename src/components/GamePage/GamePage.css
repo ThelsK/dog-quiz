@@ -50,13 +50,17 @@
   font-size: 1.35rem;
   font-weight: bold;
   color: #e6e9f0;
-  width: 200px;
+  max-height: 16rem;
+  /* width: 200px; */
   display: flex;
   align-items: flex-end;
 }
 
 .answerpicture {
-  max-width: 100%;
+  /* max-width: 100%; */
+  /* max-width: 90vw; */
+  height: 15rem;
+  /* margin: 0.5rem; */
 }
 
 .answerWaiting {
@@ -109,4 +113,5 @@ img {
     flex-flow: column nowrap;
     align-items: center;
   }
+
 }
