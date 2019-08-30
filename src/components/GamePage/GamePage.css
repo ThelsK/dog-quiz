@@ -63,6 +63,11 @@
   background-color: #431c5d;
 }
 
+.answerWaiting {
+  border: 3px solid #431c5d;
+  background-color: #431c5d;
+}
+
 .answerWaiting:hover {
   border: 3px solid #431c5d;
   background-color: #ffff66;
@@ -108,4 +113,5 @@ img {
     flex-flow: column nowrap;
     align-items: center;
   }
+
 }
