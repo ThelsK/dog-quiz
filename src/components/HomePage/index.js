@@ -5,6 +5,10 @@ import "./HomePage.css"
 import MOThdog from "../../images/MOThdog.png"
 
 class HomePage extends React.Component {
+  componentDidMount() {
+    document.title = "MOTh's Dog Quiz App"
+  }
+
   render() {
     return (
       <div className="home-page">

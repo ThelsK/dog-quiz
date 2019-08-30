@@ -5,6 +5,9 @@ import { clearNewBreeds } from '../../actions/setActiveBreeds'
 import "./NewBreeds.css"
 
 class NewBreeds extends React.Component {
+  componentDidMount() {
+    document.title = "MOTh's Dog Quiz"
+  }
 
   startNextQuestion = () => {
     this.props.generateQuestion(this.props.activeBreeds, this.props.gameType, [], this.props.totalAnswers)
