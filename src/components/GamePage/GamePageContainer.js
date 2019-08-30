@@ -6,6 +6,8 @@ import { addCorrect, addWrong, resetScore } from "../../actions/score.js"
 import QAPictureContainer from '../QAPicture'
 import NewBreeds from '../NewBreeds'
 
+const hotkeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "="]
+
 class GamePageContainer extends React.Component {
   state = {
     answerStates: []
@@ -24,30 +26,23 @@ class GamePageContainer extends React.Component {
   }
 
   handleKeyDown = event => {
-    switch (event.key) {
-      case "1":
-        this.handleAnswer(0)
-        break
-      case "2":
-        this.handleAnswer(1)
-        break
-      case "3":
-        this.handleAnswer(2)
-        break
-      default:
+    for (let index = 0; index < this.props.currentQuestion.answers.length; index++) {
+      if (hotkeys[index] === event.key) {
+        this.handleAnswer(index)
+      }
     }
   }
 
-  receivedAnswer = event =>
+  handleClickAnswer = event =>
     this.handleAnswer(parseInt(event.target.id))
 
-  handleAnswer = answerClicked => {
+  handleAnswer = answerChosen => {
     if (this.props.newBreeds.length || this.state.answerStates.length) {
       return
     }
-    this.setAnswerStates(this.props.currentQuestion.answers, answerClicked)
+    this.setAnswerStates(this.props.currentQuestion.answers, answerChosen)
 
-    if (this.props.currentQuestion.answers[answerClicked].isCorrect) {
+    if (this.props.currentQuestion.answers[answerChosen].isCorrect) {
       this.props.addCorrect()
       setTimeout(this.startNextQuestion, 800)
     } else {
@@ -65,12 +60,12 @@ class GamePageContainer extends React.Component {
     }
   }
 
-  setAnswerStates = (answers, answerClicked) =>
+  setAnswerStates = (answers, answerChosen) =>
     this.setState({
       answerStates: answers.map((answer, answerID) => {
         let answerClass = ""
 
-        if (answerClicked === answerID) {
+        if (answerChosen === answerID) {
           answerClass += "Choose"
         } else {
           answerClass += "Show"
@@ -95,7 +90,8 @@ class GamePageContainer extends React.Component {
         return (<QAPictureContainer
           currentQuestion={this.props.currentQuestion}
           answerStates={this.state.answerStates}
-          receivedAnswer={this.receivedAnswer}
+          handleClickAnswer={this.handleClickAnswer}
+          hotkeys={hotkeys}
         />)
       default:
         return "Loading Quiz..."

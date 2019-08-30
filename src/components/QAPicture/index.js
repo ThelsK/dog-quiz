@@ -12,7 +12,8 @@ export default class QAPictureContainer extends React.Component {
       <QAPictureAnswers
         answers={this.props.currentQuestion.answers}
         answerStates={this.props.answerStates}
-        receivedAnswer={this.props.receivedAnswer}
+        handleClickAnswer={this.props.handleClickAnswer}
+        hotkeys={this.props.hotkeys}
       />
     </div>
   }
