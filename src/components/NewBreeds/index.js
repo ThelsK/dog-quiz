@@ -7,7 +7,7 @@ import "./NewBreeds.css"
 class NewBreeds extends React.Component {
 
   startNextQuestion = () => {
-    this.props.generateQuestion(this.props.activeBreeds)
+    this.props.generateQuestion(this.props.activeBreeds, this.props.gameType, [], this.props.totalAnswers)
     this.props.clearNewBreeds()
   }
 
@@ -33,7 +33,6 @@ class NewBreeds extends React.Component {
         </div>
         <button className="return-home" type="button" onClick={this.startNextQuestion}>{starting ? "Start" : "Continue"}</button>
       </div>
-
     )
   }
 }
