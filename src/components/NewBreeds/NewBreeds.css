@@ -20,10 +20,12 @@
 }
 
 .start-button {
-  background-color: #bccbde;
+  /* background-color: #bccbde;
   color: #431c5d;
   padding: 8px;
   box-shadow: 0px 10px 13px -7px #000000;
-  margin: 1rem 2rem 2rem 2rem;
-  font-size: calc(10px + 2vmin);
+  margin: 1rem 2rem 2rem 2rem; */
+  font-family: inherit;
+  font-size: inherit;
+  /* font-size: calc(10px + 2vmin); */
 }

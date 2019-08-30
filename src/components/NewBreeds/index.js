@@ -31,7 +31,7 @@ class NewBreeds extends React.Component {
             </div>
           )}
         </div>
-        <button className="start-button" type="button" onClick={this.startNextQuestion}>{starting ? "Start" : "Continue"}</button>
+        <button className="start-button action-btn" type="button" onClick={this.startNextQuestion}>{starting ? "Start" : "Continue"}</button>
       </div>
     )
   }

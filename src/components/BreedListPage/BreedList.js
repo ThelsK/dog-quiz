@@ -14,7 +14,7 @@ export default function BreedList(props) {
           </li>
         )}
       </ul>
-      <Link to="/" className="return-home">
+      <Link to="/" className="return-home action-btn">
           Return Home
         </Link>
     </div>
