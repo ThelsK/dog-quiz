@@ -37,3 +37,10 @@
   line-height: 1.6rem;
 }
 
+.logo{
+  box-shadow: initial;
+  width: 20vw;
+  filter: invert(14%) sepia(39%) saturate(2598%) hue-rotate(252deg) brightness(96%) contrast(100%);
+  margin-top: 2rem;
+}
+

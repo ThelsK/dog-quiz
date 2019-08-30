@@ -2,11 +2,13 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Title from "../Title"
 import "./HomePage.css"
+import MOThdog from "../../images/MOThdog.png"
 
 class HomePage extends React.Component {
   render() {
     return (
       <div className="home-page">
+        <img className="logo" src={MOThdog} alt="MOTh Logo" />
         <Title title="MOTh's Dog Quiz" />
         <div className="home-page-links-box">
           <div className="home-page-link">
