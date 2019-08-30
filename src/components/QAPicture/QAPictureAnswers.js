@@ -3,8 +3,10 @@ import React from "react"
 export default class QAPictureAnswers extends React.Component {
   render() {
     return (
-      <div className="a-box">
-        <h2>Answers:</h2>
+      <div className="answerbox">
+        <h2 className="answertitle">
+          Answers:
+        </h2>
         <div className="answers">
           {this.props.answers.map((answer, id) =>
             <div

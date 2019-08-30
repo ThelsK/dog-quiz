@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 import GamePageContainer from "./GamePageContainer"
 import Scorebar from "../Scorebar"
+import "./GamePage.css"
 
 class GamePageWrapper extends React.Component {
 
