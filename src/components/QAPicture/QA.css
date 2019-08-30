@@ -1,5 +1,7 @@
 .question {
-  max-height: 400px;
+  /* max-height: 400px;
+   */
+   max-height: 40vh;
 }
 
 .answers {
@@ -23,7 +25,7 @@
 
 .answer {
   max-width: 140px;
-  padding: 1rem 3rem 1rem 3rem;
+  padding: 1rem 2rem 1rem 2rem;
   border: 3px solid #431c5d;
   margin: 1rem;
   font-weight: bold;
@@ -92,5 +94,9 @@ img {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+  }
+
+  .answer {
+    width: 200px;
   }
 }
