@@ -18,6 +18,7 @@
   padding: 2rem;
   max-height: 100rem;
   max-width: 450px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .home-page-link:after {
@@ -35,5 +36,13 @@
   font-size: calc(5px + 2vmin);
   text-align: justify;
   line-height: 1.6rem;
+}
+
+.logo{
+  box-shadow: initial;
+  max-width: 20vw;
+  max-height: 14vh;
+  filter: invert(14%) sepia(39%) saturate(2598%) hue-rotate(252deg) brightness(96%) contrast(100%);
+  margin-top: 1rem;
 }
 
