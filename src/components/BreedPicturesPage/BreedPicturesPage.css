@@ -22,13 +22,16 @@
   display: flex;
 }
 
-@media only screen and (max-width: 600px) {
-  .breed-picture {
-    width: 100%;
-  }
 .breed-pictures-nav {
   margin: auto;
   flex-wrap: wrap;
   width: 80vw;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .breed-picture {
+    width: 100%;
+  }
+
 }
