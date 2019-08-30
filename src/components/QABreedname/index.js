@@ -1,11 +1,10 @@
 import React from "react"
 import QABreednameQuestion from "./QABreednameQuestion";
 import QABreednameAnswers from "./QABreednameAnswers";
-//import "./QABreedname.css"
 
 export default class QABreednameContainer extends React.Component {
   render() {
-    return <div className="q-a-box">
+    return <div className="qabox">
       <QABreednameQuestion
         question={this.props.currentQuestion.breedname}
       />

@@ -17,6 +17,13 @@ export const addBreedsToActive = (activeBreeds, breedsList, totalAnswers = 3) =>
   }
 
   const newBreeds = []
+
+  // vvvvv DELETE THESE LINES! vvvvv
+  newBreeds.push(breedsList.find(breed => breed.breedname === "Germanshepherd"))
+  newBreeds.push(breedsList.find(breed => breed.breedname === "Mexicanhairless"))
+  newBreeds.push(breedsList.find(breed => breed.breedname === "Pug"))
+  // ^^^^^ DELETE THESE LINES! ^^^^^
+
   while (newBreeds.length < totalAnswers) {
     const newBreed = breedsList[Math.floor(Math.random() * breedsList.length)]
     if (!activeBreeds.includes(newBreed) && !newBreeds.includes(newBreed)) {
