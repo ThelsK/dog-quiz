@@ -23,7 +23,7 @@ li {
   padding-bottom: 6px;
 }
 
-a.return-home {
+a.return-home, .return-home {
   background-color: #bccbde;
   color: #431c5d;
   /* padding: 8px; */
