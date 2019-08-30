@@ -6,7 +6,7 @@ export default class QAPictureQuestion extends React.Component {
       <div className="questionbox">
         <h5 className="questiontitle">Identify the dog in the picture:</h5>
         <img
-          className="question"
+          className="photo question"
           src={this.props.question}
           alt={"Identify this dog"}
         />

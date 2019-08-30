@@ -58,13 +58,22 @@
   font-size: 1.35rem;
   font-weight: bold;
   color: #e6e9f0;
-  width: 200px;
+  /* width: 200px; */
   display: flex;
-  align-items: flex-end;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .answerpicture {
-  max-width: 100%;
+  max-width: 90vw;
+  max-height: 18rem;
+}
+
+.imageNumber {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin: 1rem 0 0 0;
 }
 
 .answerWaiting {
@@ -106,7 +115,7 @@
   border: 3px solid gray;
 }
 
-img {
+.photo {
   -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;

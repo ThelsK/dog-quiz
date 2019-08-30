@@ -27,7 +27,7 @@ class NewBreeds extends React.Component {
         <div className="hints">
           {this.props.newBreeds.map((breed, id) =>
             <div key={id} className="hint">
-              <img className="hintpicture" alt={breed.breedname}
+              <img className="photo hintpicture" alt={breed.breedname}
                 src={breed.pictures[Math.floor(Math.random() * breed.pictures.length)]}
               />
               <h2>{breed.breedname}</h2>

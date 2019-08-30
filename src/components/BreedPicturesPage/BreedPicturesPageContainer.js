@@ -25,7 +25,7 @@ export default class BreedPicturesPageContainer extends React.Component {
     const breedTenPictures = this.randomize(currentBreedObject.pictures)
     return (
       <div className="breed-pictures-box">
-        {breedTenPictures.map(breed => <img className="breed-picture" key={breed} alt="breed" src={breed} />)}
+        {breedTenPictures.map(breed => <img className="photo breed-picture" key={breed} alt="breed" src={breed} />)}
       </div>
     )
   }
