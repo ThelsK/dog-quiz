@@ -11,3 +11,8 @@
 .hintpicture {
   max-width: 30vw;
 }
+
+.hintbox {
+  display: flex;
+  flex-direction: column;
+}
