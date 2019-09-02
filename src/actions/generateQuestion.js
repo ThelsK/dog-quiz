@@ -12,10 +12,23 @@ export const generateQuestion = (breedsList = [], questionType = "picture", rece
   }
 
   if (questionType === "mixed") {
-    if (Math.random() < 0.5) {
-      questionType = "picture"
-    } else {
-      questionType = "breedname"
+    switch (Math.floor(Math.random() * 2)) {
+      case 1:
+        questionType = "picture"
+        break
+      default:
+        questionType = "breedname"
+    }
+  } else if (questionType === "hardmode") {
+    switch (Math.floor(Math.random() * 3)) {
+      case 1:
+        questionType = "picture"
+        break
+      case 2:
+        questionType = "match"
+        break
+      default:
+        questionType = "breedname"
     }
   }
 
@@ -27,6 +40,7 @@ export const generateQuestion = (breedsList = [], questionType = "picture", rece
   question.type = questionType
   question.breedname = breedsList[correctIndexes.breedIndex].breedname
   question.picture = breedsList[correctIndexes.breedIndex].pictures[correctIndexes.pictureIndex]
+  question.picture2 = breedsList[correctIndexes.breedIndex].pictures[correctIndexes.pictureIndex2]
 
   const answers = []
   if (questionType === "picture") {
@@ -51,6 +65,7 @@ const generateCorrectIndexes = (breedsList, recentPictures) => {
 
   let breedIndex = 0
   let pictureIndex = 0
+  let pictureIndex2 = 0
   let picture = ""
 
   do {
@@ -59,9 +74,14 @@ const generateCorrectIndexes = (breedsList, recentPictures) => {
     picture = breedsList[breedIndex].pictures[pictureIndex]
   } while (recentPictures.includes(picture))
 
+  do {
+    pictureIndex2 = Math.floor(Math.random() * breedsList[breedIndex].pictures.length)
+  } while (pictureIndex === pictureIndex2)
+
   return ({
     breedIndex,
     pictureIndex,
+    pictureIndex2,
   })
 }
 

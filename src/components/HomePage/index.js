@@ -48,7 +48,25 @@ class HomePage extends React.Component {
               A mixture of both games
             </h3>
             <p className="link-description">
-              Play a combination of the other two games. Sometimes you have to guess which dog is on a picture, and sometimes you have to guess which picture depicts a certain breed.
+              Play a combination of the first two games. Sometimes you have to guess which dog is on a picture, and sometimes you have to guess which picture depicts a certain breed.
+            </p>
+          </Link>
+
+          <Link to="/game/match" className="home-page-link">
+            <h3 className="link-heading">
+              Match dog pictures
+            </h3>
+            <p className="link-description">
+              Play a game where you are shown a picture and have to guess which of the other pictures belongs to the same breed.
+            </p>
+          </Link>
+
+          <Link to="/game/hardmode" className="home-page-link">
+            <h3 className="link-heading">
+              Dog quiz on steroids
+            </h3>
+            <p className="link-description">
+              Play a combination of all the other games, except that you have five answers to choose from.
             </p>
           </Link>
 
