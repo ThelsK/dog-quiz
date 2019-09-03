@@ -5,7 +5,7 @@ import { clearActiveBreeds, addBreedsToActive, clearNewBreeds } from '../../acti
 import { addCorrect, addWrong, resetScore } from "../../actions/score.js"
 import QAPictureContainer from '../QAPicture'
 import QABreednameContainer from '../QABreedname'
-import QAMixedContainer from '../QAMixed'
+import QAMatchContainer from '../QAMatch'
 import NewBreeds from '../NewBreeds'
 
 const hotkeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "="]
@@ -115,7 +115,7 @@ class GamePageContainer extends React.Component {
           hotkeys={hotkeys}
         />)
       case "match":
-        return (<QAMixedContainer
+        return (<QAMatchContainer
           currentQuestion={this.props.currentQuestion}
           answerStates={this.state.answerStates}
           answerText={this.state.answerText}

@@ -7,6 +7,7 @@ export default class QAPictureContainer extends React.Component {
     return <div className="qabox">
       <QAPictureQuestion
         question={this.props.currentQuestion.picture2}
+        questionText="Find the picture that matches this picture:"
       />
       <QABreednameAnswers
         answers={this.props.currentQuestion.answers}
