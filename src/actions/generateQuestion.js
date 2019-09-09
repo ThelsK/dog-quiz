@@ -19,7 +19,7 @@ export const generateQuestion = (breedsList = [], questionType = "picture", rece
       default:
         questionType = "breedname"
     }
-  } else if (questionType === "hardmode") {
+  } else if (questionType === "master") {
     switch (Math.floor(Math.random() * 3)) {
       case 1:
         questionType = "picture"

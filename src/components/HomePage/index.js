@@ -61,9 +61,9 @@ class HomePage extends React.Component {
             </p>
           </Link>
 
-          <Link to="/game/hardmode" className="home-page-link">
+          <Link to="/game/master" className="home-page-link">
             <h3 className="link-heading">
-              Dog quiz on steroids
+              Master dog quiz
             </h3>
             <p className="link-description">
               Play a combination of all the other games, except that you have five answers to choose from.
