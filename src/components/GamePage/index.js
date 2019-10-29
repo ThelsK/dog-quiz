@@ -14,7 +14,9 @@ class GamePageWrapper extends React.Component {
         {this.props.breedsList.length
           ? <GamePageContainer
             gameType={this.props.match.params.gametype}
-            totalAnswers={3}
+            totalAnswers={this.props.match.params.gametype !== "master"
+              ? 3
+              : 5}
           />
           : "Loading..."
         }
