@@ -23,10 +23,8 @@ export default class QABreednameAnswers extends React.Component {
                 alt={"possible answer"}
                 id={id}
               />
-              <p
-                className="imageNumber"
-                id={id}
-              >
+              <p className="imageNumber"
+                id={id}>
                 {(this.props.hotkeys.length > id)
                   ? this.props.hotkeys[id]
                   : null}
